@@ -1,4 +1,5 @@
 {
     "intro.label": "Introduction",
-    "contact.label":"Contact"
+    "contact.label":"Contact",
+    "details.label": "Details"
 }
