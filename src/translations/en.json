@@ -4,5 +4,6 @@
     "details.label": "Details",
     "profession.label":"Professional",
     "surname.label":"Surname",
-    "givenname.label":"Given Name"
+    "givenname.label":"Given Name",
+    "title.label":"Title"
 }
