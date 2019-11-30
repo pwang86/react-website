@@ -4,5 +4,6 @@
     "details.label": "细节",
     "profession.label":"专业",
     "surname.label":"姓",
-    "givenname.label":"名"
+    "givenname.label":"名",
+    "title.label":"标题"
 }
