@@ -3,5 +3,6 @@
     "contact.label":"联系",
     "details.label": "细节",
     "profession.label":"专业",
-    "surname.label":"姓"
+    "surname.label":"姓",
+    "givenname.label":"明"
 }
