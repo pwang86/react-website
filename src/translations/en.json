@@ -3,5 +3,6 @@
     "contact.label":"Contact",
     "details.label": "Details",
     "profession.label":"Professional",
-    "surname.label":"Surname"
+    "surname.label":"Surname",
+    "givenname.label":"Given Name"
 }
