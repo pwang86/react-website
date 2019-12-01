@@ -5,5 +5,6 @@
     "profession.label":"专业",
     "surname.label":"姓",
     "givenname.label":"名",
-    "title.label":"标题"
+    "title.label":"标题",
+    "content.label":"内容"
 }
