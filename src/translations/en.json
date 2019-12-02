@@ -3,8 +3,9 @@
     "contact.label":"Contact",
     "details.label": "Details",
     "profession.label":"Professional",
-    "surname.label":"Surname",
-    "givenname.label":"Given Name",
-    "title.label":"Title",
-    "content.label":"Content"
+    "name.label":"Name",
+    "email.label":"Email",
+    "subject.label":"Subject",
+    "Message.label":"Message",
+    "Submit.label":"Submit"
 }
