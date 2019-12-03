@@ -3,9 +3,9 @@
     "contact.label":"联系",
     "details.label": "细节",
     "profession.label":"专业",
-    "surname.label":"姓",
-    "givenname.label":"名",
-    "title.label":"标题",
-    "content.label":"内容",
-    "submit.label":"提交"
+    "name.label":"名字",
+    "email.label":"邮箱",
+    "subject.label":"标题",
+    "message.label":"内容",
+    "submit.label": "发送"
 }
