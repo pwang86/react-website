@@ -6,5 +6,6 @@
     "surname.label":"Surname",
     "givenname.label":"Given Name",
     "title.label":"Title",
-    "content.label":"Content"
+    "content.label":"Content",
+    "submit.label":"Submit"
 }
