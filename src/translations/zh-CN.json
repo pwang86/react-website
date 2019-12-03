@@ -6,5 +6,6 @@
     "surname.label":"姓",
     "givenname.label":"名",
     "title.label":"标题",
-    "content.label":"内容"
+    "content.label":"内容",
+    "submit.label":"提交"
 }
