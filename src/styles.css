@@ -2,3 +2,6 @@
 footer, header, menu, nav{
   display:block;
 }
+ol{
+  list-style: none;
+}
