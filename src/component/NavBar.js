@@ -2,6 +2,7 @@ import React from "react";
 function NavBar() {
   return (
     <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+      <a className="navbar-brand" href="#">Joni's Driving School</a>
       <div className="collapse navbar-collapse">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item">
