@@ -1,5 +1,6 @@
-import React from "react";
+import React,{useState} from "react";
 function NavBar() {
+  const [isVisible, setVisible] = useState(false);
   return (
     <header className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
       <a className="navbar-brand" href="#">Joni's Driving School</a>
