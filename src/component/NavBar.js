@@ -1,7 +1,7 @@
 import React from "react";
 function NavBar() {
   return (
-    <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <header className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
       <a className="navbar-brand" href="#">Joni's Driving School</a>
       <div className="collapse navbar-collapse">
         <ul className="navbar-nav mr-auto">
@@ -16,10 +16,16 @@ function NavBar() {
             </a>
           </li>
         </ul>
-        <span className="navbar-text">English</span>
-        <span className="navbar-text">中文</span>
+        <ul className="navbar-nav">
+          <li className="nav-item">
+            <a className="nav-link">English</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link">中文</a>
+          </li>
+        </ul>
       </div>
-    </nav>
+    </header>
   );
 }
 
