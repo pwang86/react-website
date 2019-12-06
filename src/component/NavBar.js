@@ -5,6 +5,11 @@ function NavBar() {
       <a className="navbar-brand" href="#">Joni's Driving School</a>
       <div className="collapse navbar-collapse">
         <ul className="navbar-nav mr-auto">
+        <li className="nav-item">
+            <a className="nav-link" href="#">
+              Home
+            </a>
+          </li>
           <li className="nav-item">
             <a className="nav-link" href="#">
               Introduction
