@@ -1,10 +1,27 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
+import classNames from "classnames";
+
 function NavBar() {
   const [isVisible, setVisible] = useState(false);
+
+  var navigationWrapperClass = classNames({
+    "collapse navbar-collapse": true,
+    "navigation-wrapper": true,
+    visible: { isVisible }
+  });
+
   return (
     <header className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-      <a className="navbar-brand" href="#">Joni's Driving School</a>
-      <div className="collapse navbar-collapse">
+      <a className="navbar-brand" href="#">
+        Joni's Driving School
+      </a>
+      <button
+        className="navbar-toggler"
+        onClick={() => setVisible({ isVisible: !isVisible })}
+      >
+        <span className="navbar-toggler-icon" />
+      </button>
+      <div className={navigationWrapperClass}>
         <ul className="navbar-nav mr-auto">
           <li className="nav-item">
             <a className="nav-link" href="#">
