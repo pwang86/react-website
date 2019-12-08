@@ -1,14 +1,8 @@
 import React, { useState } from "react";
-import classNames from "classnames";
 
 function NavBar() {
   const [isVisible, setVisible] = useState(false);
-
-  var navigationWrapperClass = classNames({
-    "collapse navbar-collapse": true,
-    "navigation-wrapper": true,
-    visible: { isVisible }
-  });
+  const [isClick, setClick] = useState(false);
 
   return (
     <header className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
@@ -16,12 +10,21 @@ function NavBar() {
         Joni's Driving School
       </a>
       <button
-        className="navbar-toggler"
-        onClick={() => setVisible({ isVisible: !isVisible })}
+        className={isClick ? "navbar-toggler collapsed" : "navbar-toggler"}
+        onClick={() => {
+          setVisible({ isVisible: !isVisible });
+          setClick({ isClick: !isClick });
+        }}
       >
         <span className="navbar-toggler-icon" />
       </button>
-      <div className={navigationWrapperClass}>
+      <div
+        className={
+          isVisible
+            ? "navbar-collapse collapse show"
+            : "navbar-collapse collapse"
+        }
+      >
         <ul className="navbar-nav mr-auto">
           <li className="nav-item">
             <a className="nav-link" href="#">
