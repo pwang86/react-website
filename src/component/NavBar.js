@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import classNames from "classnames";
+import "./NavBar.css";
 
 function NavBar() {
   const [isVisible, setVisible] = useState(false);
@@ -26,7 +27,7 @@ function NavBar() {
       <div
         className={navWrapperClass}
       >
-        <ul className="navbar-nav mr-auto">
+        <ul className="navbar-nav mr-auto nav--ul">
           <li className="nav-item">
             <a className="nav-link" href="#">
               Home
