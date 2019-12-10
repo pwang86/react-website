@@ -6,7 +6,7 @@ function NavBar() {
   const [isVisible, setVisible] = useState(false);
   const [isClick, setClick] = useState(false);
 
-  var navWrapperClass = classNames("navbar-collapse collapse", {show: isVisible});
+  var navWrapperClass = classNames("customized-nav navbar-collapse collapse ", {show: isVisible});
   var burgerMenuClass = classNames("navbar-toggler",{collapsed: !isClick});
 
   return (
@@ -27,7 +27,7 @@ function NavBar() {
       <div
         className={navWrapperClass}
       >
-        <ul className="navbar-nav mr-auto nav--ul">
+        <ul className="navbar-nav mr-auto flex-row menu-ul">
           <li className="nav-item">
             <a className="nav-link" href="#">
               Home
@@ -44,7 +44,7 @@ function NavBar() {
             </a>
           </li>
         </ul>
-        <ul className="navbar-nav">
+        <ul className="navbar-nav flex-row language-ul">
           <li className="nav-item">
             <a className="nav-link">English</a>
           </li>
