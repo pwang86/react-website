@@ -3,7 +3,20 @@ font-size: 1em;
 }
 
 @media all and (max-width: 960px){
-  .nav--ul{
-    text-align: center;
-}
+  .customized-nav{
+    width: 100%;
+    display: -webkit-flex; /* Safari */
+    -webkit-justify-content: center; /* Safari 6.1+ */
+    display: flex;
+    justify-content: center;
+  }
+  .menu-ul li{
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+  .language-ul li{
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
 }
