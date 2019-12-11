@@ -1,6 +1,10 @@
 header{
 font-size: 1em;
 }
+.flag{
+  width:20px;
+  height:20px;
+}
 
 @media all and (max-width: 960px){
   .customized-nav{
