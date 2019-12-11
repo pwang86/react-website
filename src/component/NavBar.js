@@ -46,10 +46,10 @@ function NavBar() {
         </ul>
         <ul className="navbar-nav flex-row language-ul">
           <li className="nav-item">
-            <a className="nav-link">English</a>
+            <a className="nav-link"><img className="flag" src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/flags/1x1/cn.svg" alt="Chinese" />中文</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link">中文</a>
+            <a className="nav-link"><img className="flag" src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/flags/1x1/au.svg" alt="English" />English</a>
           </li>
         </ul>
       </div>
