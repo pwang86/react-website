@@ -1,5 +1,8 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const ErrorOverlayPlugin = require("error-overlay-webpack-plugin");
+
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 const htmlPlugin = new HtmlWebPackPlugin({
   template: "./src/index.html",
@@ -7,6 +10,7 @@ const htmlPlugin = new HtmlWebPackPlugin({
 });
 
 const errorOverlayPlugin = new ErrorOverlayPlugin();
+const extractTextPlugin = new ExtractTextPlugin("css/app.css");
 
 module.exports = {
   entry: "./src/index.js",
@@ -42,6 +46,19 @@ module.exports = {
           }
         ]
       }
+    ]
+  },
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        uglifyOptions: {
+          warnings: false,
+          output: {
+            comments: false,
+            beautify: false
+          }
+        }
+      })
     ]
   },
   plugins: [htmlPlugin, errorOverlayPlugin]
