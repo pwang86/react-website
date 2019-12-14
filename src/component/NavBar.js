@@ -8,7 +8,10 @@ function NavBar() {
   const [isVisible, setVisible] = useState(false);
   const [isClick, setClick] = useState(false);
 
-  // set scroll color
+  // set contact scroll color
+  const [contactColor, setContactColor] = useState("nav-link text-light");
+  const handleContactActive = () => setContactColor("nav-link text-primary");
+  const handleContactInactive = () => setContactColor("nav-link text-light");
 
   var navWrapperClass = classNames("customized-nav navbar-collapse collapse ", {
     show: isVisible
