@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import classNames from "classnames";
+import { Link } from "react-scroll";
 import "./NavBar.css";
 
 function NavBar() {
   const [isVisible, setVisible] = useState(false);
   const [isClick, setClick] = useState(false);
 
-  var navWrapperClass = classNames("customized-nav navbar-collapse collapse ", {show: isVisible});
-  var burgerMenuClass = classNames("navbar-toggler",{collapsed: !isClick});
+  var navWrapperClass = classNames("customized-nav navbar-collapse collapse ", {
+    show: isVisible
+  });
+  var burgerMenuClass = classNames("navbar-toggler", { collapsed: !isClick });
 
   return (
     <header className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
@@ -24,9 +27,7 @@ function NavBar() {
       >
         <span className="navbar-toggler-icon" />
       </button>
-      <div
-        className={navWrapperClass}
-      >
+      <div className={navWrapperClass}>
         <ul className="navbar-nav mr-auto flex-row menu-ul">
           <li className="nav-item">
             <a className="nav-link" href="#">
@@ -46,15 +47,29 @@ function NavBar() {
         </ul>
         <ul className="navbar-nav flex-row language-ul">
           <li className="nav-item">
-            <a className="nav-link"><img className="flag" src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/flags/1x1/cn.svg" alt="Chinese" />中文</a>
+            <a className="nav-link">
+              <img
+                className="flag"
+                src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/flags/1x1/cn.svg"
+                alt="Chinese"
+              />
+              中文
+            </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link"><img className="flag" src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/flags/1x1/au.svg" alt="English" />English</a>
+            <a className="nav-link">
+              <img
+                className="flag"
+                src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/flags/1x1/au.svg"
+                alt="English"
+              />
+              English
+            </a>
           </li>
         </ul>
       </div>
     </header>
   );
-} 
+}
 
 export default NavBar;
