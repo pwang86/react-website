@@ -8,6 +8,8 @@ function NavBar() {
   const [isVisible, setVisible] = useState(false);
   const [isClick, setClick] = useState(false);
 
+  //set introduction scroll color
+
   // set contact scroll color
   const [contactColor, setContactColor] = useState("nav-link text-light");
   const handleContactActive = () => setContactColor("nav-link text-primary");
