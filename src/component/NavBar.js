@@ -4,8 +4,11 @@ import { Link } from "react-scroll";
 import "./NavBar.css";
 
 function NavBar() {
+  // navbar in mobile mode
   const [isVisible, setVisible] = useState(false);
   const [isClick, setClick] = useState(false);
+
+  // set scroll color
 
   var navWrapperClass = classNames("customized-nav navbar-collapse collapse ", {
     show: isVisible
