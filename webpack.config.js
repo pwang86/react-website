@@ -32,8 +32,11 @@ module.exports = {
         }
       },
       {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"]
+        test: /\.s?css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: ["css-loader", "sass-loader"]
+        })
       },
       {
         test: /\.(jp(e*)g|png|gif|svg|pdf|ico)$/,
@@ -46,5 +49,5 @@ module.exports = {
       }
     ]
   },
-  plugins: [htmlPlugin, errorOverlayPlugin]
+  plugins: [htmlPlugin, extractTextPlugin, errorOverlayPlugin]
 };
