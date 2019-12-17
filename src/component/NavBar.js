@@ -48,9 +48,18 @@ function NavBar() {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <Link
+              activeClass="active"
+              to="contact"
+              spy
+              smooth
+              duration={500}
+              className={contactColor}
+              onSetActive={handleContactActive}
+              onSetInactive={handleContactInactive}
+            >
               Contact
-            </a>
+            </Link>
           </li>
         </ul>
         <ul className="navbar-nav flex-row language-ul">
