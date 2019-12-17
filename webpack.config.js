@@ -1,5 +1,5 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+// const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const ErrorOverlayPlugin = require("error-overlay-webpack-plugin");
 
 const htmlPlugin = new HtmlWebPackPlugin({
@@ -8,7 +8,7 @@ const htmlPlugin = new HtmlWebPackPlugin({
 });
 
 const errorOverlayPlugin = new ErrorOverlayPlugin();
-const extractTextPlugin = new ExtractTextPlugin("css/app.css");
+// const extractTextPlugin = new ExtractTextPlugin("css/app.css");
 
 module.exports = {
   entry: "./src/index.js",
@@ -31,12 +31,16 @@ module.exports = {
           loader: "babel-loader"
         }
       },
+      // {
+      //   test: /\.s?css$/,
+      //   use: ExtractTextPlugin.extract({
+      //     fallback: "style-loader",
+      //     use: ["css-loader", "sass-loader"]
+      //   })
+      // },
       {
-        test: /\.s?css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: ["css-loader", "sass-loader"]
-        })
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"]
       },
       {
         test: /\.(jp(e*)g|png|gif|svg|pdf|ico)$/,
@@ -49,5 +53,5 @@ module.exports = {
       }
     ]
   },
-  plugins: [htmlPlugin, extractTextPlugin, errorOverlayPlugin]
+  plugins: [htmlPlugin, errorOverlayPlugin]
 };
