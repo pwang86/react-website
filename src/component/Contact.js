@@ -17,7 +17,7 @@ function Contact() {
             </div>
             <div className="col">
               <textarea className="form-control" rows="6" placeholder="Message" />
-              <button type="submit" className="btn btn-primary">Submit</button>
+              <button type="submit" className="btn btn-primary btn-block">Submit</button>
             </div>
           </div>
         </form>
