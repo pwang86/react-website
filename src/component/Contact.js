@@ -3,12 +3,12 @@ import "./Contact.css";
 
 function Contact() {
   return (
-    <div className="contact">
+    <div className="contact text-center">
       <div className="contact--content">
         <header>
           <h2>Contact Me</h2>
         </header>
-        <form>
+        <form className="contact--form">
           <div className="row">
             <div className="col">
               <input type="text" className="form-control" placeholder="Name" />
