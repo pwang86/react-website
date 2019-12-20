@@ -9,16 +9,18 @@ function Contact() {
           <h2>Contact Me</h2>
         </header>
         <form className="contact--form">
-          <div className="row">
+          <div className="row contact--row">
             <div className="col">
-              <input type="text" className="form-control" placeholder="Name" />
-              <input type="email" className="form-control" placeholder="Email" />
-              <input type="text" className="form-control" placeholder="Subject" />
+              <input type="text" className="form-control contact--field" placeholder="Name" />
+              <input type="email" className="form-control contact--field" placeholder="Email" />
+              <input type="text" className="form-control contact--field" placeholder="Subject" />
             </div>
             <div className="col">
-              <textarea className="form-control" rows="6" placeholder="Message" />
-              <button type="submit" className="btn btn-primary btn-block">Submit</button>
+              <textarea className="form-control" rows="7" placeholder="Message" />
             </div>
+          </div>
+          <div className="form-group row  d-flex justify-content-center contact--button">
+            <button type="submit" className="btn btn-primary btn-lg">Submit</button>
           </div>
         </form>
       </div>
