@@ -4,9 +4,19 @@
     position: relative;
 }
 .contact--content{
-    width:40em;
+    width:60em;
+    max-width: calc(100% - 4em);
     margin: 0 auto;
 }
 .contact--form{
     background-color: #ffffff;
+}
+.contact--row{
+    padding: 1.5em;
+}
+.contact--field{
+    margin-bottom: 2.15em;
+}
+.contact--button{
+    padding-bottom: 1.5em;
 }
