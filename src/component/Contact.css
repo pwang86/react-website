@@ -1,6 +1,9 @@
 .contact{
-    padding: 6em 0 6em 0;
+    padding: 15em 0 6em 0;
     background: #f5f6f7;
+}
+.contact--header{
+    margin-bottom: 2em;
 }
 .contact--content{
     width:60em;
