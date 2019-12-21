@@ -9,6 +9,9 @@ function NavBar() {
   const [isClick, setClick] = useState(false);
 
   // set introduction scroll color
+  const [introColor, setIntroColor] = useState("nav-link text-light");
+  const handleIntroActive = () => setIntroColor("nav-link text-primary");
+  const handleIntroInactive = () => setIntroColor("nav-link text-light");
 
   // set contact scroll color
   const [contactColor, setContactColor] = useState("nav-link text-light");
@@ -43,9 +46,18 @@ function NavBar() {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <Link
+              activeClass="active"
+              to="introduction"
+              spy
+              smooth
+              duration={500}
+              className={introColor}
+              onSetActive={handleIntroActive}
+              onSetInactive={handleIntroInactive}
+            >
               Introduction
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
             <Link
