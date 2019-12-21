@@ -5,22 +5,40 @@ function Contact() {
   return (
     <div className="contact text-center">
       <div className="contact--content">
-        <header>
+        <header className="contact--header">
           <h2>Contact Me</h2>
         </header>
         <form className="contact--form">
           <div className="row contact--row">
             <div className="col">
-              <input type="text" className="form-control contact--field" placeholder="Name" />
-              <input type="email" className="form-control contact--field" placeholder="Email" />
-              <input type="text" className="form-control contact--field" placeholder="Subject" />
+              <input
+                type="text"
+                className="form-control contact--field"
+                placeholder="Name"
+              />
+              <input
+                type="email"
+                className="form-control contact--field"
+                placeholder="Email"
+              />
+              <input
+                type="text"
+                className="form-control contact--field"
+                placeholder="Subject"
+              />
             </div>
             <div className="col">
-              <textarea className="form-control" rows="7" placeholder="Message" />
+              <textarea
+                className="form-control"
+                rows="7"
+                placeholder="Message"
+              />
             </div>
           </div>
           <div className="form-group row  d-flex justify-content-center contact--button">
-            <button type="submit" className="btn btn-primary btn-lg">Submit</button>
+            <button type="submit" className="btn btn-primary btn-lg">
+              Submit
+            </button>
           </div>
         </form>
       </div>
