@@ -3,7 +3,7 @@ footer, header, menu, nav{
   display:block;
 }
 
-ol{
+ol,ul{
   list-style: none;
 }
 
