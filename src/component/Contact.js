@@ -1,12 +1,13 @@
 import React from "react";
+import { withNamespaces } from "react-i18next";
 import "./Contact.css";
 
-function Contact() {
+function Contact({ t }) {
   return (
     <div className="contact text-center">
       <div className="contact--content">
         <header className="contact--header">
-          <h2>Contact Me</h2>
+          <h2>{t("title.label")}</h2>
         </header>
         <form className="contact--form">
           <div className="row contact--row">
@@ -46,7 +47,7 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default withNamespaces()(Contact);
 /* <form>
           <div className="form-group row">
             <label htmlFor="inputName" className="col-sm-2 col-form-label">Name</label>
