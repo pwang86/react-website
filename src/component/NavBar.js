@@ -1,9 +1,15 @@
 import React, { useState } from "react";
 import classNames from "classnames";
 import { Link } from "react-scroll";
+import i18n from "../i18n";
+import { withNamespaces } from "react-i18next";
 import "./NavBar.css";
 
-function NavBar() {
+function NavBar({ t }) {
+  const handleClick = lng => {
+    i18n.changeLanguage(lng);
+  };
+
   // navbar in mobile mode
   const [isVisible, setVisible] = useState(false);
   const [isClick, setClick] = useState(false);
@@ -42,7 +48,7 @@ function NavBar() {
         <ul className="navbar-nav mr-auto flex-row menu-ul">
           <li className="nav-item">
             <a className="nav-link" href="#">
-              Home
+              {t("home.label")}
             </a>
           </li>
           <li className="nav-item">
@@ -56,7 +62,7 @@ function NavBar() {
               onSetActive={handleIntroActive}
               onSetInactive={handleIntroInactive}
             >
-              Introduction
+              {t("intro.label")}
             </Link>
           </li>
           <li className="nav-item">
@@ -70,13 +76,17 @@ function NavBar() {
               onSetActive={handleContactActive}
               onSetInactive={handleContactInactive}
             >
-              Contact
+              {t("contact.label")}
             </Link>
           </li>
         </ul>
         <ul className="navbar-nav flex-row language-ul">
           <li className="nav-item">
-            <a className="nav-link">
+            <a
+              className="nav-link"
+              href="#"
+              onClick={() => handleClick("zh-CN")}
+            >
               <img
                 className="flag"
                 src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/flags/1x1/cn.svg"
@@ -86,7 +96,7 @@ function NavBar() {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link">
+            <a className="nav-link" href="#" onClick={() => handleClick("en")}>
               <img
                 className="flag"
                 src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/flags/1x1/au.svg"
@@ -101,4 +111,4 @@ function NavBar() {
   );
 }
 
-export default NavBar;
+export default withNamespaces()(NavBar);
