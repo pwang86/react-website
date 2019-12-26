@@ -48,7 +48,7 @@ function NavBar({ t }) {
         <ul className="navbar-nav mr-auto flex-row menu-ul">
           <li className="nav-item">
             <a className="nav-link" href="#">
-              {t("home.label")}
+              {t("home")}
             </a>
           </li>
           <li className="nav-item">
@@ -62,7 +62,7 @@ function NavBar({ t }) {
               onSetActive={handleIntroActive}
               onSetInactive={handleIntroInactive}
             >
-              {t("intro.label")}
+              {t("intro")}
             </Link>
           </li>
           <li className="nav-item">
@@ -76,7 +76,7 @@ function NavBar({ t }) {
               onSetActive={handleContactActive}
               onSetInactive={handleContactInactive}
             >
-              {t("contact.label")}
+              {t("contact")}
             </Link>
           </li>
         </ul>
