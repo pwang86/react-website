@@ -7,7 +7,7 @@ function Contact({ t }) {
     <div className="contact text-center">
       <div className="contact--content">
         <header className="contact--header">
-          <h2>{t("title.label")}</h2>
+          <h2>{t("title")}</h2>
         </header>
         <form className="contact--form">
           <div className="row contact--row">
