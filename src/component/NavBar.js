@@ -32,7 +32,7 @@ function NavBar({ t }) {
   return (
     <header className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
       <a className="navbar-brand" href="#">
-        Joni's Driving School
+        Joni {t("ds")}
       </a>
       <button
         className={burgerMenuClass}
