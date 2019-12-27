@@ -15,30 +15,30 @@ function Contact({ t }) {
               <input
                 type="text"
                 className="form-control contact--field"
-                placeholder="Name"
+                placeholder={t("name")}
               />
               <input
                 type="email"
                 className="form-control contact--field"
-                placeholder="Email"
+                placeholder={t("email")}
               />
               <input
                 type="text"
                 className="form-control contact--field"
-                placeholder="Subject"
+                placeholder={t("subject")}
               />
             </div>
             <div className="col">
               <textarea
                 className="form-control"
                 rows="7"
-                placeholder="Message"
+                placeholder={t("message")}
               />
             </div>
           </div>
           <div className="form-group row  d-flex justify-content-center contact--button">
             <button type="submit" className="btn btn-primary btn-lg">
-              Submit
+              {t("submit")}
             </button>
           </div>
         </form>
