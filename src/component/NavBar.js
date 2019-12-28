@@ -32,6 +32,7 @@ function NavBar({ t }) {
   return (
     <header className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
       <a className="navbar-brand" href="#">
+        <img src={require("../images/joni.png")} />
         Joni {t("ds")}
       </a>
       <button
