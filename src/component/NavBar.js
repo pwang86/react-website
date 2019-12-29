@@ -4,6 +4,7 @@ import { Link } from "react-scroll";
 import i18n from "../i18n";
 import { withNamespaces } from "react-i18next";
 import "./NavBar.css";
+import logo from "../images/joni.png";
 
 function NavBar({ t }) {
   const handleClick = lng => {
@@ -32,8 +33,7 @@ function NavBar({ t }) {
   return (
     <header className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
       <a className="navbar-brand" href="#">
-        <img src={require("../images/joni.png")} />
-        Joni {t("ds")}
+        <img className="logo" src={logo} alt="logo" />
       </a>
       <button
         className={burgerMenuClass}
