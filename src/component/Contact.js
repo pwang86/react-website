@@ -11,7 +11,7 @@ function Contact({ t }) {
         </header>
         <form className="contact--form">
           <div className="row contact--row">
-            <div className="col">
+            <div className="col-md-6">
               <input
                 type="text"
                 className="form-control contact--field"
@@ -28,7 +28,7 @@ function Contact({ t }) {
                 placeholder={t("subject")}
               />
             </div>
-            <div className="col">
+            <div className="col-md-6">
               <textarea
                 className="form-control"
                 rows="7"
