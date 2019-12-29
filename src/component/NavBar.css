@@ -5,6 +5,10 @@ font-size: 1em;
   width:20px;
   height:20px;
 }
+.logo{
+  width: 36px;
+  height: 36px;
+}
 
 @media all and (max-width: 960px){
   .customized-nav{
