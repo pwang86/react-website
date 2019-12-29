@@ -41,6 +41,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
+    "emailjs-com": "^2.4.1",
     "i18next": "^19.0.2",
     "i18next-xhr-backend": "^3.2.2",
     "mem": "^6.0.0",
