@@ -1,31 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
 import { withNamespaces } from "react-i18next";
 import "./Contact.css";
 
 function Contact({ t }) {
+  const [contactInfo, setContactInfo] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: ""
+  });
+
+  const handleChange = e =>
+    setContactInfo({ ...contactInfo, [e.target.name]: e.target.value });
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    setContactInfo({});
+  };
+
   return (
     <div className="contact text-center">
       <div className="contact--content">
         <header className="contact--header">
           <h2>{t("title")}</h2>
         </header>
-        <form className="contact--form">
+        <form className="contact--form" onSubmit={handleSubmit}>
           <div className="row contact--row">
             <div className="col-md-6">
               <input
                 type="text"
                 className="form-control contact--field"
                 placeholder={t("name")}
+                onChange={handleChange}
               />
               <input
                 type="email"
                 className="form-control contact--field"
                 placeholder={t("email")}
+                onChange={handleChange}
               />
               <input
                 type="text"
                 className="form-control contact--field"
                 placeholder={t("subject")}
+                onChange={handleChange}
               />
             </div>
             <div className="col-md-6">
@@ -33,6 +51,7 @@ function Contact({ t }) {
                 className="form-control"
                 rows="7"
                 placeholder={t("message")}
+                onChange={handleChange}
               />
             </div>
           </div>
