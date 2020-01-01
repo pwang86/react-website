@@ -4,3 +4,59 @@
     margin: 0 auto;
     max-width:100%;
 }
+.feature{
+    position:relative;
+    height: 25em;
+}
+.feature:after{
+    clear: both;
+    content: "";
+    display: block;
+}
+.feature-image{
+    display: inline-block;
+    height: 100%;
+    overflow: hidden;
+    position:relative;
+    width: 50%;
+}
+    .feature-image img {
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+    }
+
+.feature-content{
+    display: inline-block;
+	padding: 4em;
+	vertical-align: middle;
+	width: 48%;
+}
+.feature.left{
+    text-align:left;
+}
+    .feature.left .feature-image{
+        float:left;
+    }
+        .feature.left .feature-image img{
+            right:0;
+            top:0;
+        }
+    .feature.left .feature-content{
+            padding-right: 0;
+    }
+
+.feature.right{
+    text-align:right;
+}
+    .feature.right .feature-image{
+        float:right;
+    }
+        .feature.right .feature-image img{
+            left:0;
+            top:0;
+        }
+    .feature.right .feature-content{
+        padding-left: 0;
+    }    
