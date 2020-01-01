@@ -60,3 +60,13 @@
     .feature.right .feature-content{
         padding-left: 0;
     }    
+/* Normal screen*/
+@media screen and (max-width: 1280px) {
+    .feature {
+        height: 18em;
+    }
+
+    .feature-content {
+        padding: 2.5em;
+    }
+}
