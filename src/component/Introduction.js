@@ -2,7 +2,7 @@ import React from "react";
 import "./Introduction.css";
 import feature1 from "../images/book.jpg";
 import feature2 from "../images/penguin.jpg";
-import feature3 from "../images/town.jpg";
+import feature3 from "../images/train.jpg";
 
 function Introduction() {
   return (
