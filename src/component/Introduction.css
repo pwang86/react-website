@@ -100,3 +100,13 @@
             width: 100%;
         }
 }
+
+/* Mobile (Portrait) */
+@media screen and (max-width: 480px){
+    .feature{
+        margin-bottom: 1em;
+    }
+        .feature-content{
+            padding: 2em 1em !important;
+        }
+}
