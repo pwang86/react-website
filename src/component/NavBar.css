@@ -4,6 +4,7 @@ font-size: 1em;
 .flag{
   width:20px;
   height:20px;
+  border-radius: 50%;
 }
 .logo{
   width: 36px;
