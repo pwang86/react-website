@@ -15,6 +15,11 @@ function NavBar({ t }) {
   const [isVisible, setVisible] = useState(false);
   const [isClick, setClick] = useState(false);
 
+  // set home scroll color
+  const [homeColor, setHomeColor] = useState("nav-link text-light");
+  const handleHomeActive = () => setHomeColor("nav-link text-primary");
+  const handleHomeInactive = () => setHomeColor("nav-link text-light");
+
   // set introduction scroll color
   const [introColor, setIntroColor] = useState("nav-link text-light");
   const handleIntroActive = () => setIntroColor("nav-link text-primary");
@@ -48,9 +53,18 @@ function NavBar({ t }) {
       <div className={navWrapperClass}>
         <ul className="navbar-nav mr-auto flex-row menu-ul">
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <Link
+              activeClass="active"
+              to="home"
+              spy
+              smooth
+              duration={500}
+              className={homeColor}
+              onSetActive={handleHomeActive}
+              onSetInactive={handleHomeInactive}
+            >
               {t("home")}
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
             <Link
