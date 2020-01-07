@@ -42,7 +42,7 @@ function Introduction({ t }) {
           <img src={feature3} alt="town" />
         </a>
         <div className="feature-content">
-          <h3>{t("learningvehicles")}</h3>
+          <h3>{t("vehicles")}</h3>
           <p>
             Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore
             condimentum. Fusce blandit ultrices sapien, in accumsan orci rhoncus
