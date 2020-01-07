@@ -8,7 +8,7 @@ import feature3 from "../images/train.jpg";
 function Introduction({ t }) {
   return (
     <div className="introduction">
-      <h2 className="text-center">{t("why")}</h2>
+      <h2 className="text-center intro--header">{t("why")}</h2>
       <section className="feature left">
         <a href="#" className="feature-image">
           <img src={feature1} alt="book" />
