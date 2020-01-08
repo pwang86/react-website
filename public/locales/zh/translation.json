@@ -14,5 +14,5 @@
     "email":"邮箱",
     "subject":"标题",
     "message":"内容",
-    "submit": "发送"
+    "send": "发送消息"
 }
