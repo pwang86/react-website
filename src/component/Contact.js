@@ -57,7 +57,7 @@ function Contact({ t }) {
           </div>
           <div className="row d-flex justify-content-center contact--button">
             <button type="submit" className="btn btn-primary btn-lg">
-              {t("submit")}
+              {t("send")}
             </button>
           </div>
         </form>
