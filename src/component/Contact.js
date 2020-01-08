@@ -29,26 +29,26 @@ function Contact({ t }) {
             <div className="col-md-6">
               <input
                 type="text"
-                className="form-control contact--field"
+                className="form-control contact--field field--font"
                 placeholder={t("name")}
                 onChange={handleChange}
               />
               <input
                 type="email"
-                className="form-control contact--field"
+                className="form-control contact--field field--font"
                 placeholder={t("email")}
                 onChange={handleChange}
               />
               <input
                 type="text"
-                className="form-control contact--field"
+                className="form-control contact--field field--font"
                 placeholder={t("subject")}
                 onChange={handleChange}
               />
             </div>
             <div className="col-md-6">
               <textarea
-                className="form-control"
+                className="form-control field--font contact--textarea"
                 rows="7"
                 placeholder={t("message")}
                 onChange={handleChange}
@@ -56,7 +56,7 @@ function Contact({ t }) {
             </div>
           </div>
           <div className="row d-flex justify-content-center contact--button">
-            <button type="submit" className="btn btn-primary btn-lg">
+            <button type="submit" className="btn btn-primary">
               {t("send")}
             </button>
           </div>
