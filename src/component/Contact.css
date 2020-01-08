@@ -6,26 +6,36 @@
     margin-bottom: 2em;
 }
 .contact--content{
-    width:60em;
+    width:80em;
     max-width: calc(100% - 4em);
     margin: 0 auto;
 }
 .contact--form{
     background-color: #ffffff;
+    padding: 1em;
 }
 .contact--row{
     padding: 1.5em;
 }
 .contact--field{
-    margin-bottom: 2.15em;
+    margin-bottom: 2em;
     border-radius: 0.6em;
+    padding:1.5em 1.5em 1.5em 1em;
+}
+.field--font{
+    font-size:1.5em;
 }
 textarea{
     border-radius: 0.6em !important;
+}
+.contact--textarea{
+    padding:0.5em 1em 2.15em 1em;
 }
 .contact--button{
     padding-bottom: 1.5em;
 }
 button{
     border-radius: 3em !important;
+    font-size:1.5em !important;
+    padding:1em !important;
 }
