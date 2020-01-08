@@ -22,7 +22,7 @@ function Contact({ t }) {
     <div className="contact text-center">
       <div className="contact--content">
         <header className="contact--header">
-          <h2>{t("title")}</h2>
+          <h1>{t("title")}</h1>
         </header>
         <form className="contact--form" onSubmit={handleSubmit}>
           <div className="row contact--row">
