@@ -14,7 +14,7 @@ function Introduction({ t }) {
           <img src={feature1} alt="book" />
         </a>
         <div className="feature-content">
-          <h3>{t("details")}</h3>
+          <h4>{t("details")}</h4>
           <p>
             Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore
             condimentum. Fusce blandit ultrices sapien, in accumsan orci rhoncus
@@ -28,7 +28,7 @@ function Introduction({ t }) {
           <img src={feature2} alt="penguin" />
         </a>
         <div className="feature-content">
-          <h3>{t("patient")}</h3>
+          <h4>{t("patient")}</h4>
           <p>
             Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore
             condimentum. Fusce blandit ultrices sapien, in accumsan orci rhoncus
@@ -42,7 +42,7 @@ function Introduction({ t }) {
           <img src={feature3} alt="town" />
         </a>
         <div className="feature-content">
-          <h3>{t("vehicles")}</h3>
+          <h4>{t("vehicles")}</h4>
           <p>
             Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore
             condimentum. Fusce blandit ultrices sapien, in accumsan orci rhoncus
