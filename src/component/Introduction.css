@@ -36,6 +36,10 @@
 	vertical-align: middle;
 	width: 48%;
 }
+    .feature-content p{
+        font-size: 0.9em;
+    }
+
 .feature.left{
     text-align:left;
 }
