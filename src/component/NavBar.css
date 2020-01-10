@@ -1,5 +1,5 @@
 header{
-font-size: 1em;
+font-size: 0.8em;
 }
 .flag{
   width:20px;
@@ -29,9 +29,6 @@ font-size: 1em;
     padding-left: 8px;
   }
 
-  .language-ul{
-    font-size: 0.8em;
-  }
   .language-ul li{
     padding: 0.2em 0.5em 0 0.5em;
   }
