@@ -23,7 +23,7 @@
     padding:1.5em 1.5em 1.5em 1em;
 }
 .field--font{
-    font-size:1.5em;
+    font-size:1em !important;
 }
 textarea{
     border-radius: 0.6em !important;
@@ -36,8 +36,10 @@ textarea{
 }
 button{
     border-radius: 3em !important;
-    font-size:1.5em !important;
-    padding:0.6em !important;
+    font-size:1em !important;
+    padding: 0 2em 0 2em !important;
+    height: 3.5em;
+    line-height: 3.5em;    
 }
 @media screen and (max-width:736px){
     .contact--form{
