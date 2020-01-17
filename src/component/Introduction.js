@@ -24,12 +24,7 @@ function Introduction({ t }) {
         </a>
         <div className="feature-content">
           <h4>{t("patient")}</h4>
-          <p>
-            Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore
-            condimentum. Fusce blandit ultrices sapien, in accumsan orci rhoncus
-            eu. Sed sodales venenatis arcu, id varius justo euismod in.
-            Curabitur egestas consectetur magna vitae.
-          </p>
+          <p>{t("profession-info")}</p>
         </div>
       </section>
       <section className="feature left">
