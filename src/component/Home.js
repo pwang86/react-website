@@ -9,7 +9,7 @@ const homeImg = {
 function Home() {
   return (
     <div className="home" style={homeImg}>
-      <span>Home</span>
+      <span className="animated fadeInLeft delay-3s text">Home</span>
     </div>
   );
 }
