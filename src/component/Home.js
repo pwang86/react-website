@@ -9,7 +9,7 @@ const homeImg = {
 function Home() {
   return (
     <div className="home" style={homeImg}>
-      <h1 className="animated fadeInDown delay-3s text layer1">Joni's</h1>
+      <h1 className="animated fadeInDown delay-2s text layer1">Joni's</h1>
       <h1 className="animated fadeInLeft delay-3s text layer2">
         Driving School
       </h1>
