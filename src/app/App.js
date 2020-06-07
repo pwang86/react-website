@@ -4,11 +4,13 @@ import Contact from "../component/Contact";
 import Home from "../component/Home";
 import Introduction from "../component/Introduction";
 import Footer from "../component/Footer";
+import Slider from "../component/Slider";
 
 function App() {
   return (
     <div>
       <NavBar />
+      <Slider />
       <Home />
       <Introduction />
       <Contact />
