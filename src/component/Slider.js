@@ -33,10 +33,10 @@ function Slider() {
         );
       })}
       <button id="goLeft" onClick={goLeft}>
-        left
+        <i className="fas fa-chevron-left" />
       </button>
       <button id="goRight" onClick={goRight}>
-        right
+        <i className="fas fa-chevron-right" />
       </button>
     </div>
   );

@@ -4,7 +4,7 @@ import BgImg from "../images/test.jpg";
 import { withNamespaces } from "react-i18next";
 
 const homeImg = {
-  backgroundImage: "url(" + BgImg + ")"
+  backgroundImage: "url(" + BgImg + ")",
 };
 
 function Home({ t }) {
