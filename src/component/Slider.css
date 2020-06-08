@@ -21,6 +21,10 @@
     position: absolute;
     top: 50%;
     left:0;
+    font-size: 1em !important;
+    padding: 0 1em 0 1em !important;
+    height: 2em;
+    line-height: 2em;
     transform: translateY(-50%);
     background: none;
     border: none;
@@ -37,6 +41,10 @@
     position: absolute;
     top: 50%;
     right:0;
+    font-size: 1em !important;
+    padding: 0 1em 0 1em !important;
+    height: 2em;
+    line-height: 2em;
     transform: translateY(-50%);
     background: none;
     border: none;
