@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./slider.css";
 import ImgComp from "./ImgComp";
 import s1 from "../images/test.jpg";
@@ -12,6 +12,12 @@ function Slider() {
     <ImgComp src={s3} />,
   ];
   const [x, setX] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      goRight();
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [x]);
   const goLeft = () => {
     x === 0 ? setX(-100 * (sliderArr.length - 1)) : setX(x + 100);
   };
