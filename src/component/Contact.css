@@ -16,6 +16,12 @@
 }
 .contact--row{
     padding: 1.5em;
+    /** 
+     * set position and align-items to rewrite them in .row, 
+     * otherwise contents will be displayed in slide.
+     */
+    position: relative !important;
+    align-items: initial !important;
 }
 .contact--field{
     margin-bottom: 2em;
@@ -33,6 +39,11 @@ textarea{
 }
 .contact--button{
     padding-bottom: 1.5em;
+    /**
+     * rewrite position in .row,
+     * otherwise button will be displayed in slide.   
+     */
+    position: relative !important;
 }
 button{
     border-radius: 3em !important;
