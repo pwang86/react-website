@@ -7,20 +7,20 @@ function Contact({ t }) {
     name: "",
     email: "",
     subject: "",
-    message: ""
+    message: "",
   });
 
-  const handleChange = e =>
+  const handleChange = (e) =>
     setContactInfo({ ...contactInfo, [e.target.name]: e.target.value });
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setContactInfo({});
   };
 
   return (
     <div className="contact text-center">
-      <div className="contact--content">
+      <section className="contact--content">
         <header className="contact--header">
           <h1>{t("title")}</h1>
         </header>
@@ -61,7 +61,7 @@ function Contact({ t }) {
             </button>
           </div>
         </form>
-      </div>
+      </section>
     </div>
   );
 }
