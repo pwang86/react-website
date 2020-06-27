@@ -4,10 +4,10 @@
     margin-right: 8px;
 }
 
-.black{
-    background: black;
+.dot-active{
+    background: #007bff;
 }
 
-.white{
-    background: white;
+.dot-inactive{
+    background: #f8f9fa;
 }
