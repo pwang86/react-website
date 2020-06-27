@@ -30,11 +30,12 @@
     border: none;
     outline: none;
     transition:0.5s;
+    color: #f8f9fa;
 }
 #goLeft:hover{
     cursor: pointer;
     background:rgba(0,0,0,0.356);
-    color: whitesmoke;
+    color: #007bff;
 }
 
 #goRight{
@@ -50,11 +51,12 @@
     border: none;
     outline: none;
     transition:0.5s;
+    color: #f8f9fa;
 }
 #goRight:hover{
     cursor: pointer;
     background:rgba(0,0,0,0.356);
-    color: whitesmoke;
+    color: #007bff;
 }
 
 .row{
