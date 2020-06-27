@@ -7,7 +7,8 @@ function Dot({ dotId, slideId }) {
   return (
     <div
       className={
-        "dot " + (changedDotId === Math.abs(slideId) ? "white" : "black")
+        "dot " +
+        (changedDotId === Math.abs(slideId) ? "dot-active" : "dot-inactive")
       }
     />
   );
