@@ -3,6 +3,7 @@ import { withNamespaces } from "react-i18next";
 import * as yup from "yup";
 import { pick } from "lodash/object";
 import { getValidationErrors } from "../common/helper";
+import classnames from "classnames";
 import "./Contact.css";
 
 const schema = yup.object().shape({
@@ -28,7 +29,12 @@ function Contact({ t }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const userInput = pick(contactInfo);
+    const userInput = pick(contactInfo, [
+      "name",
+      "email",
+      "subject",
+      "message",
+    ]);
     try {
       await schema.validate(userInput, {
         abortEarly: false,
@@ -48,47 +54,78 @@ function Contact({ t }) {
         <form className="contact--form" onSubmit={handleSubmit}>
           <div className="row contact--row">
             <div className="col-md-6">
-              <input
-                name="name"
-                type="text"
-                className="form-control contact--field field--font"
-                placeholder={t("name")}
-                onChange={handleChange}
-              />
-              {validationErrors["name"] && (
-                <p className="error text-danger">{validationErrors["name"]}</p>
-              )}
-              <input
-                name="email"
-                type="email"
-                className="form-control contact--field field--font"
-                placeholder={t("email")}
-                onChange={handleChange}
-              />
-              {validationErrors["email"] && (
-                <p className="error text-danger">{validationErrors["email"]}</p>
-              )}
-              <input
-                name="subject"
-                type="text"
-                className="form-control contact--field field--font"
-                placeholder={t("subject")}
-                onChange={handleChange}
-              />
+              <div className="row-margin">
+                <input
+                  name="name"
+                  type="text"
+                  className={classnames(
+                    "form-control contact--field field--font",
+                    {
+                      "border border-danger": !!validationErrors["name"],
+                    }
+                  )}
+                  placeholder={t("name")}
+                  onChange={handleChange}
+                  value={contactInfo.name}
+                />
+                {validationErrors["name"] && (
+                  <p className="error text-danger text-left">
+                    {validationErrors["name"]}
+                  </p>
+                )}
+              </div>
+              <div className="row-margin">
+                <input
+                  name="email"
+                  type="email"
+                  className={classnames(
+                    "form-control contact--field field--font",
+                    { "border border-danger": !!validationErrors["email"] }
+                  )}
+                  placeholder={t("email")}
+                  onChange={handleChange}
+                  value={contactInfo.email}
+                />
+                {validationErrors["email"] && (
+                  <p className="error text-danger text-left">
+                    {validationErrors["email"]}
+                  </p>
+                )}
+              </div>
+              <div className="row-margin">
+                <input
+                  name="subject"
+                  type="text"
+                  className={classnames(
+                    "form-control contact--field field--font",
+                    { "border border-danger": !!validationErrors["subject"] }
+                  )}
+                  placeholder={t("subject")}
+                  onChange={handleChange}
+                  value={contactInfo.subject}
+                />
+                {validationErrors["subject"] && (
+                  <p className="error text-danger text-left">
+                    {validationErrors["subject"]}
+                  </p>
+                )}
+              </div>
             </div>
-            {validationErrors["subject"] && (
-              <p className="error text-danger">{validationErrors["subject"]}</p>
-            )}
+
             <div className="col-md-6">
               <textarea
                 name="message"
-                className="form-control field--font contact--textarea"
-                rows="7"
+                className={classnames(
+                  "form-control field--font contact--textarea",
+                  { "border border-danger": !!validationErrors["message"] }
+                )}
+                rows={validationErrors["message"] ? 9 : 7}
                 placeholder={t("message")}
                 onChange={handleChange}
+                value={contactInfo.message}
               />
               {validationErrors["message"] && (
-                <p className="error text-danger">
+                <p className="error error--textarea text-danger text-left">
                   {validationErrors["message"]}
                 </p>
               )}
