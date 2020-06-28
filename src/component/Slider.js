@@ -34,7 +34,7 @@ function Slider() {
   ];
 
   return (
-    <div className="slider">
+    <div className="home slider">
       {sliderArr.map((item, index) => {
         return (
           <div
