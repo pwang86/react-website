@@ -5,21 +5,22 @@ const ErrorOverlayPlugin = require("error-overlay-webpack-plugin");
 
 const htmlPlugin = new HtmlWebPackPlugin({
   template: "./src/index.html",
-  filename: "./index.html"
+  filename: "./index.html",
 });
 
 const errorOverlayPlugin = new ErrorOverlayPlugin();
 // const extractTextPlugin = new ExtractTextPlugin("css/app.css");
 const definePlugin = new webpack.DefinePlugin({
-TEMPLATEID: JSON.stringify(),
-USERID: JSON.stringify()
+  SERVICE_ID: JSON.stringify("your_service_id"),
+  TEMPLATE_ID: JSON.stringify("your_template_id"),
+  USER_ID: JSON.stringify("your_user_id"),
 });
 
 module.exports = {
   entry: "./src/index.js",
   devtool: "source-map",
   resolve: {
-    extensions: [".js", ".jsx"]
+    extensions: [".js", ".jsx"],
   },
   module: {
     rules: [
@@ -27,14 +28,14 @@ module.exports = {
         enforce: "pre",
         test: /\.jsx?$/,
         use: ["eslint-loader"],
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
-        }
+          loader: "babel-loader",
+        },
       },
       // {
       //   test: /\.s?css$/,
@@ -45,18 +46,18 @@ module.exports = {
       // },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"]
+        use: ["style-loader", "css-loader"],
       },
       {
         test: /\.(jp(e*)g|png|gif|svg|pdf|ico)$/,
         use: [
           {
             loader: "file-loader",
-            options: {}
-          }
-        ]
-      }
-    ]
+            options: {},
+          },
+        ],
+      },
+    ],
   },
-  plugins: [htmlPlugin, errorOverlayPlugin, definePlugin]
+  plugins: [htmlPlugin, errorOverlayPlugin, definePlugin],
 };
