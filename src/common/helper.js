@@ -5,3 +5,15 @@ export function getValidationErrors(err) {
   }, {});
   return validationErrors;
 }
+
+export function getServiceId() {
+  return SERVICE_ID || process.env.SERVICE_ID;
+}
+
+export function getTemplateId() {
+  return TEMPLATE_ID || process.env.TEMPLATE_ID;
+}
+
+export function getUserId() {
+  return USER_ID || process.env.USER_ID;
+}
