@@ -7,5 +7,10 @@
   },
   "env": {
     "browser": true
+  },
+  "globals":{
+    "SERVICE_ID": true,
+    "TEMPLATE_ID": true,
+    "USER_ID": true
   }
 }
