@@ -7,21 +7,22 @@ const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 const htmlPlugin = new HtmlWebPackPlugin({
   template: "./src/index.html",
-  filename: "./index.html"
+  filename: "./index.html",
 });
 
 const errorOverlayPlugin = new ErrorOverlayPlugin();
 const extractTextPlugin = new ExtractTextPlugin("css/app.css");
 const definePlugin = new webpack.DefinePlugin({
-  TEMPLATEID: JSON.stringify(),
-  USERID: JSON.stringify()
-  });
+  SERVICE_ID: JSON.stringify("your_service_id"),
+  TEMPLATE_ID: JSON.stringify("your_template_id"),
+  USER_ID: JSON.stringify("your_user_id"),
+});
 
 module.exports = {
   entry: "./src/index.js",
   devtool: "source-map",
   resolve: {
-    extensions: [".js", ".jsx"]
+    extensions: [".js", ".jsx"],
   },
   module: {
     rules: [
@@ -29,32 +30,32 @@ module.exports = {
         enforce: "pre",
         test: /\.jsx?$/,
         use: ["eslint-loader"],
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
-        }
+          loader: "babel-loader",
+        },
       },
       {
         test: /\.s?css$/,
         use: ExtractTextPlugin.extract({
           fallback: "style-loader",
-          use: ["css-loader", "sass-loader"]
-        })
+          use: ["css-loader", "sass-loader"],
+        }),
       },
       {
         test: /\.(jp(e*)g|png|gif|svg|pdf|ico)$/,
         use: [
           {
             loader: "file-loader",
-            options: {}
-          }
-        ]
-      }
-    ]
+            options: {},
+          },
+        ],
+      },
+    ],
   },
   optimization: {
     minimizer: [
@@ -63,11 +64,11 @@ module.exports = {
           warnings: false,
           output: {
             comments: false,
-            beautify: false
-          }
-        }
-      })
-    ]
+            beautify: false,
+          },
+        },
+      }),
+    ],
   },
-  plugins: [htmlPlugin, extractTextPlugin, errorOverlayPlugin,definePlugin]
+  plugins: [htmlPlugin, extractTextPlugin, errorOverlayPlugin, definePlugin],
 };
