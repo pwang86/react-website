@@ -2,8 +2,14 @@ import React, { useState } from "react";
 import { withNamespaces } from "react-i18next";
 import * as yup from "yup";
 import { pick } from "lodash/object";
-import { getValidationErrors } from "../common/helper";
+import {
+  getValidationErrors,
+  getServiceId,
+  getTemplateId,
+  getUserId,
+} from "../common/helper";
 import classnames from "classnames";
+import * as emailjs from "emailjs-com";
 import "./Contact.css";
 
 const schema = yup.object().shape({
@@ -43,6 +49,17 @@ function Contact({ t }) {
       const validationErrs = getValidationErrors(err);
       setValidationErrors(validationErrs);
     }
+
+    emailjs.send(getServiceId(), getTemplateId(), userInput, getUserId()).then(
+      function (response) {
+        console.log("SUCCESS!", response.status, response.text);
+      },
+      function (err) {
+        console.log("FAILED...", err);
+      }
+    );
+
+    setContactInfo({});
   };
 
   return (
