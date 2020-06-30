@@ -53,12 +53,22 @@ textarea{
      */
     position: relative !important;
 }
-button{
+.submit-button{
     border-radius: 3em !important;
     font-size:1em !important;
     padding: 0 2em 0 2em !important;
     height: 3.5em;
     line-height: 3.5em;    
+}
+.modal--display{
+    display: block;
+    padding-left: 16px;
+}
+.modal-body--left{
+    text-align: left;
+}
+.modal--button{
+    border-radius: 2em;
 }
 @media screen and (max-width:736px){
     .contact--form{
