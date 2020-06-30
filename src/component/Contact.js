@@ -28,7 +28,7 @@ function Contact({ t }) {
   });
 
   const [validationErrors, setValidationErrors] = useState({});
-  const [showSubmittedModal, setModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
 
   const handleChange = (e) => {
     setContactInfo({ ...contactInfo, [e.target.name]: e.target.value });
@@ -53,18 +53,15 @@ function Contact({ t }) {
     }
 
     emailjs.send(getServiceId(), getTemplateId(), userInput, getUserId()).then(
-      function (response) {
+      (response) => {
+        setShowModal(true);
         console.log("SUCCESS!", response.status, response.text);
       },
-      function (err) {
+      (err) => {
         console.log("FAILED...", err);
       }
     );
-
-    setContactInfo({name: "",
-    email: "",
-    subject: "",
-    message: "",});
+    setContactInfo({ name: "", email: "", subject: "", message: "" });
   };
 
   return (
@@ -75,24 +72,42 @@ function Contact({ t }) {
         </header>
 
         {/* Modal */}
-        <div className={classnames("modal fade",{"show": showSubmittedModal})} role="dialog">
-          <div className="modal-dialog modal-dialog-centered" role="document">
-            <div className="modal-content">
-              <div className="modal-header">
-                <h5 className="modal-title">Thank you for your enquiry</h5>
-                <button type="button" className="close" onClick={()=>setModal(false)} aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div className="modal-body">
-                <p>We will contact you shortly.</p>
-              </div>
-              <div className="modal-footer">
-                <button type="button" className="btn btn-secondary" onClick={()=>setModal(false)}>Close</button>
+        {showModal && (
+          <div className="modal-backdrop">
+            <div classnames="modal fade show modal--display" role="dialog">
+              <div
+                className="modal-dialog modal-dialog-centered"
+                role="document"
+              >
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h5 className="modal-title">Thank you for your enquiry</h5>
+                    <button
+                      type="button"
+                      className="close"
+                      onClick={() => setShowModal(false)}
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div className="modal-body modal-body--left">
+                    <p>We will contact you shortly.</p>
+                  </div>
+                  <div className="modal-footer">
+                    <button
+                      type="button"
+                      className="btn btn-secondary modal--button"
+                      onClick={() => setShowModal(false)}
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        )}
 
         <form className="contact--form" onSubmit={handleSubmit}>
           <div className="row contact--row">
@@ -175,7 +190,7 @@ function Contact({ t }) {
             </div>
           </div>
           <div className="row d-flex justify-content-center contact--button">
-            <button type="submit" className="btn btn-primary">
+            <button type="submit" className="btn btn-primary submit-button">
               {t("send")}
             </button>
           </div>
