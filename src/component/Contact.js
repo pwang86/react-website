@@ -28,6 +28,8 @@ function Contact({ t }) {
   });
 
   const [validationErrors, setValidationErrors] = useState({});
+  const [showSubmittedModal, setModal] = useState(true);
+
   const handleChange = (e) => {
     setContactInfo({ ...contactInfo, [e.target.name]: e.target.value });
     setValidationErrors({});
@@ -59,7 +61,10 @@ function Contact({ t }) {
       }
     );
 
-    setContactInfo({});
+    setContactInfo({name: "",
+    email: "",
+    subject: "",
+    message: "",});
   };
 
   return (
@@ -68,6 +73,27 @@ function Contact({ t }) {
         <header className="contact--header">
           <h1>{t("title")}</h1>
         </header>
+
+        {/* Modal */}
+        <div className={classnames("modal fade",{"show": showSubmittedModal})} role="dialog">
+          <div className="modal-dialog modal-dialog-centered" role="document">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title">Thank you for your enquiry</h5>
+                <button type="button" className="close" onClick={()=>setModal(false)} aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div className="modal-body">
+                <p>We will contact you shortly.</p>
+              </div>
+              <div className="modal-footer">
+                <button type="button" className="btn btn-secondary" onClick={()=>setModal(false)}>Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <form className="contact--form" onSubmit={handleSubmit}>
           <div className="row contact--row">
             <div className="col-md-6">
