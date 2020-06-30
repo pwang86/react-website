@@ -16,5 +16,6 @@
     "email":"Email",
     "subject":"Subject",
     "message":"Message",
-    "send":"Send Message"
+    "send":"Send Message",
+    "feedback":"Thank you for your enquiry. We will contact you shortly."
 }
