@@ -10,7 +10,6 @@ import {
 } from "../common/helper";
 import classnames from "classnames";
 import * as emailjs from "emailjs-com";
-import {isEmpty} from "lodash";
 import "./Contact.css";
 
 const schema = yup.object().shape({
@@ -34,8 +33,10 @@ function Contact({ t }) {
   // Show modal after successfully submitted form
   const [showModal, setShowModal] = useState(false);
 
-  // Show alert when unsuccessfully submitted form 
+  // Show alert when unsuccessfully submitted form
   const [showAlert, setAlert] = useState(false);
+
+  // check form valid before submit
 
   const handleChange = (e) => {
     setContactInfo({ ...contactInfo, [e.target.name]: e.target.value });
@@ -57,22 +58,23 @@ function Contact({ t }) {
     } catch (err) {
       const validationErrs = getValidationErrors(err);
       setValidationErrors(validationErrs);
+      // important, otherwise it will send empty form.
+      return;
     }
 
-    if (isEmpty(validationErrors)) {
-      emailjs.send(getServiceId(), getTemplateId(), userInput, getUserId()).then(
-        (response) => {
-          setShowModal(true);
-          console.log("SUCCESS!", response.status, response.text);
-        },
-        (err) => {
-          setAlert(true);
-          console.log("FAILED...", err);
-        }
-      );    
-      setContactInfo({ name: "", email: "", subject: "", message: "" });
-    }
-
+    emailjs.send(getServiceId(), getTemplateId(), userInput, getUserId()).then(
+      (response) => {
+        setShowModal(true);
+        setValidationErrors({});
+        setContactInfo({ name: "", email: "", subject: "", message: "" });
+        console.log("SUCCESS!", response.status, response.text);
+      },
+      (err) => {
+        setAlert(true);
+        setValidationErrors({});
+        console.log("FAILED...", err);
+      }
+    );
   };
 
   return (
@@ -122,14 +124,19 @@ function Contact({ t }) {
 
         {/* Alert */}
         {showAlert && (
-        <div className="alert alert-danger" role="alert">
-          Sorry, error occured when submitting. Please try it again.
-          <button type="button" className="close" onClick={() => setAlert(false)} aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
+          <div className="alert alert-danger" role="alert">
+            Sorry, error occured when submitting. Please try it again.
+            <button
+              type="button"
+              className="close"
+              onClick={() => setAlert(false)}
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
         )}
-        
+
         <form className="contact--form" onSubmit={handleSubmit}>
           <div className="row contact--row">
             <div className="col-md-6">
