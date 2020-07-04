@@ -1,0 +1,22 @@
+%btn-style{
+    position: absolute;
+    top: 50%;
+    font-size: 1em !important;
+    padding: 0 1em 0 1em !important;
+    height: 2em;
+    line-height: 2em;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    outline: none;
+    transition:0.5s;
+    color: #f8f9fa;
+}
+#goLeft{
+    left: 0;
+    @extend %btn-style;
+}
+#goRight{
+    right: 0;
+    @extend %btn-style;
+}
