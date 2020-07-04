@@ -17,5 +17,6 @@
     "subject":"Subject",
     "message":"Message",
     "send":"Send Message",
+    "submitted": "Thank you for your enquiry",
     "feedback":"Thank you for your enquiry. We will contact you shortly."
 }
