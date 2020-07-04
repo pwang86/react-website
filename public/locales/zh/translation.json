@@ -16,5 +16,6 @@
     "email":"邮箱",
     "subject":"标题",
     "message":"内容",
-    "send": "发送消息"
+    "send": "发送消息",
+    "submitted":"感谢您来信询问"
 }
