@@ -94,7 +94,7 @@ function Contact({ t }) {
               >
                 <div className="modal-content">
                   <div className="modal-header">
-                    <h5 className="modal-title">Thank you for your enquiry</h5>
+                    <h5 className="modal-title">{t("submitted")}</h5>
                     <button
                       type="button"
                       className="close"
@@ -105,7 +105,7 @@ function Contact({ t }) {
                     </button>
                   </div>
                   <div className="modal-body modal-body--left">
-                    <p>We will contact you shortly.</p>
+                    <p>{t("feedback")}</p>
                   </div>
                   <div className="modal-footer">
                     <button
