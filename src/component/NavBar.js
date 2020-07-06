@@ -7,7 +7,7 @@ import "./NavBar.css";
 import logo from "../images/joni.png";
 
 function NavBar({ t }) {
-  const handleClick = lng => {
+  const handleClick = (lng) => {
     i18n.changeLanguage(lng);
   };
 
@@ -15,10 +15,21 @@ function NavBar({ t }) {
   const [isVisible, setVisible] = useState(false);
   const [isClick, setClick] = useState(false);
 
+  // set nav style
+  const [navStyle, setNavStyle] = useState(
+    "navbar fixed-top navbar-expand-lg navbar-dark"
+  );
+
   // set home scroll color
   const [homeColor, setHomeColor] = useState("nav-link text-light");
-  const handleHomeActive = () => setHomeColor("nav-link text-primary");
-  const handleHomeInactive = () => setHomeColor("nav-link text-light");
+  const handleHomeActive = () => {
+    setNavStyle("navbar fixed-top navbar-expand-lg navbar-dark");
+    setHomeColor("nav-link text-primary");
+  };
+  const handleHomeInactive = () => {
+    setNavStyle("navbar fixed-top navbar-expand-lg navbar-dark");
+    setHomeColor("nav-link text-light");
+  };
 
   // set introduction scroll color
   const [introColor, setIntroColor] = useState("nav-link text-light");
@@ -31,12 +42,12 @@ function NavBar({ t }) {
   const handleContactInactive = () => setContactColor("nav-link text-light");
 
   var navWrapperClass = classNames("customized-nav navbar-collapse collapse ", {
-    show: isVisible
+    show: isVisible,
   });
   var burgerMenuClass = classNames("navbar-toggler", { collapsed: !isClick });
 
   return (
-    <header className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <header className={navStyle}>
       <a className="navbar-brand" href="#">
         <img className="logo" src={logo} alt="logo" />
       </a>
