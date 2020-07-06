@@ -10,7 +10,10 @@ font-size: 0.8em;
   width: 36px;
   height: 36px;
 }
-
+.navbar-dark{
+  background: black;
+  opacity: 0.6;
+}
 @media all and (max-width: 960px){
   .customized-nav{
     width: 100%;
