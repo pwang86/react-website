@@ -154,11 +154,6 @@ function Contact({ t }) {
                   onChange={handleChange}
                   value={contactInfo.name}
                 />
-                {validationErrors["name"] && (
-                  <p className="error text-danger text-left">
-                    {validationErrors["name"]}
-                  </p>
-                )}
               </div>
               <div className="row-margin">
                 <input
@@ -172,11 +167,6 @@ function Contact({ t }) {
                   onChange={handleChange}
                   value={contactInfo.email}
                 />
-                {validationErrors["email"] && (
-                  <p className="error text-danger text-left">
-                    {validationErrors["email"]}
-                  </p>
-                )}
               </div>
               <div className="row-margin">
                 <input
@@ -190,11 +180,6 @@ function Contact({ t }) {
                   onChange={handleChange}
                   value={contactInfo.subject}
                 />
-                {validationErrors["subject"] && (
-                  <p className="error text-danger text-left">
-                    {validationErrors["subject"]}
-                  </p>
-                )}
               </div>
             </div>
 
@@ -205,16 +190,11 @@ function Contact({ t }) {
                   "form-control field--font contact--textarea",
                   { "border border-danger": !!validationErrors["message"] }
                 )}
-                rows={validationErrors["message"] ? 9 : 7}
+                rows="7"
                 placeholder={t("message")}
                 onChange={handleChange}
                 value={contactInfo.message}
               />
-              {validationErrors["message"] && (
-                <p className="error error--textarea text-danger text-left">
-                  {validationErrors["message"]}
-                </p>
-              )}
             </div>
           </div>
           <div className="row d-flex justify-content-center contact--button">
