@@ -21,25 +21,25 @@ function NavBar({ t }) {
   );
 
   // set home scroll color
-  const [homeColor, setHomeColor] = useState("nav-link text-light");
+  const [homeColor, setHomeColor] = useState("nav-link text-white");
   const handleHomeActive = () => {
     setNavStyle("navbar fixed-top navbar-expand-lg navbar-dark");
     setHomeColor("nav-link text-primary");
   };
   const handleHomeInactive = () => {
     setNavStyle("navbar fixed-top navbar-expand-lg navbar-dark");
-    setHomeColor("nav-link text-light");
+    setHomeColor("nav-link text-white");
   };
 
   // set introduction scroll color
-  const [introColor, setIntroColor] = useState("nav-link text-light");
+  const [introColor, setIntroColor] = useState("nav-link text-white");
   const handleIntroActive = () => setIntroColor("nav-link text-primary");
-  const handleIntroInactive = () => setIntroColor("nav-link text-light");
+  const handleIntroInactive = () => setIntroColor("nav-link text-white");
 
   // set contact scroll color
-  const [contactColor, setContactColor] = useState("nav-link text-light");
+  const [contactColor, setContactColor] = useState("nav-link text-white");
   const handleContactActive = () => setContactColor("nav-link text-primary");
-  const handleContactInactive = () => setContactColor("nav-link text-light");
+  const handleContactInactive = () => setContactColor("nav-link text-white");
 
   var navWrapperClass = classNames("customized-nav navbar-collapse collapse ", {
     show: isVisible,
@@ -109,7 +109,7 @@ function NavBar({ t }) {
         <ul className="navbar-nav flex-row language-ul">
           <li className="nav-item">
             <a
-              className="nav-link"
+              className="nav-link text-white"
               href="#"
               onClick={() => handleClick("zh-CN")}
             >
@@ -122,7 +122,7 @@ function NavBar({ t }) {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#" onClick={() => handleClick("en")}>
+            <a className="nav-link text-white" href="#" onClick={() => handleClick("en")}>
               <img
                 className="flag"
                 src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/flags/1x1/au.svg"
