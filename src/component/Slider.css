@@ -68,5 +68,11 @@
     justify-content: center;
     z-index: 1;
 }
+/*mobile size*/
+@media screen and (max-width: 736px) {
+    .slide{
+        height: 100vh;
+    }
+}
 
 
