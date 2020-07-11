@@ -1,6 +1,6 @@
 const webpack = require("webpack");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
-// const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const ErrorOverlayPlugin = require("error-overlay-webpack-plugin");
 
 const htmlPlugin = new HtmlWebPackPlugin({
@@ -9,7 +9,7 @@ const htmlPlugin = new HtmlWebPackPlugin({
 });
 
 const errorOverlayPlugin = new ErrorOverlayPlugin();
-// const extractTextPlugin = new ExtractTextPlugin("css/app.css");
+const extractTextPlugin = new ExtractTextPlugin("css/app.css");
 const definePlugin = new webpack.DefinePlugin({
   SERVICE_ID: JSON.stringify("your_service_id"),
   TEMPLATE_ID: JSON.stringify("your_template_id"),
@@ -37,17 +37,17 @@ module.exports = {
           loader: "babel-loader",
         },
       },
-      // {
-      //   test: /\.s?css$/,
-      //   use: ExtractTextPlugin.extract({
-      //     fallback: "style-loader",
-      //     use: ["css-loader", "sass-loader"]
-      //   })
-      // },
       {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        test: /\.s?css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: ["css-loader", "sass-loader"],
+        }),
       },
+      // {
+      //   test: /\.css$/,
+      //   use: ["style-loader", "css-loader"],
+      // },
       {
         test: /\.(jp(e*)g|png|gif|svg|pdf|ico)$/,
         use: [
@@ -59,5 +59,5 @@ module.exports = {
       },
     ],
   },
-  plugins: [htmlPlugin, errorOverlayPlugin, definePlugin],
+  plugins: [htmlPlugin, extractTextPlugin, errorOverlayPlugin, definePlugin],
 };
