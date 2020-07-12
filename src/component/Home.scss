@@ -1,0 +1,28 @@
+.home{
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:100vh;
+    position: relative;
+}
+
+.text{
+    position: absolute;
+    /*primary color in bootstrap
+    color: #007bff;*/
+    color:#428bca;
+}
+
+.layer1{
+    top: 100px;
+    left:50px;
+    font-size: 1.4em;
+}
+
+.layer2{
+    top: 150px;
+    left:50px;
+}

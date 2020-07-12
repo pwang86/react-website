@@ -1,3 +1,22 @@
+.slider{
+    position: relative;
+    width: 100%;
+    max-height: 100vh;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    overflow:hidden;
+}
+
+.slide{
+    min-width: 100%;
+    height: 100%;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
 %btn-style{
     position: absolute;
     top: 50%;
@@ -19,4 +38,33 @@
 #goRight{
     right: 0;
     @extend %btn-style;
+}
+
+%btn-hover-style{
+    cursor: pointer;
+    background:rgba(0,0,0,0.356);
+    color: #007bff;
+}
+#goLeft:hover{
+    @extend %btn-hover-style;
+}
+
+#goRight:hover{
+    @extend %btn-hover-style;
+}
+
+.row{
+    position: absolute;
+    bottom: 25px;
+    width: 100%;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    z-index: 1;
+}
+/*mobile size*/
+@media screen and (max-width: 736px) {
+    .slide{
+        height: 100vh;
+    }
 }
