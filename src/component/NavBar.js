@@ -3,7 +3,7 @@ import classNames from "classnames";
 import { Link } from "react-scroll";
 import i18n from "../i18n";
 import { withNamespaces } from "react-i18next";
-import "./NavBar.css";
+import "./NavBar.scss";
 import logo from "../images/joni.png";
 
 function NavBar({ t }) {
@@ -122,7 +122,11 @@ function NavBar({ t }) {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link text-white" href="#" onClick={() => handleClick("en")}>
+            <a
+              className="nav-link text-white"
+              href="#"
+              onClick={() => handleClick("en")}
+            >
               <img
                 className="flag"
                 src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/flags/1x1/au.svg"

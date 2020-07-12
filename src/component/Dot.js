@@ -1,5 +1,5 @@
 import React from "react";
-import "./Dot.css";
+import "./Dot.scss";
 
 function Dot({ dotId, slideId }) {
   let changedDotId = dotId * 100;

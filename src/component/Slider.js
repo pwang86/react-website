@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import "./slider.css";
+import "./Slider.scss";
 import ImgComp from "./ImgComp";
 import Dot from "./Dot";
-import s1 from "../images/test.jpg";
-import s2 from "../images/train.jpg";
-import s3 from "../images/book.jpg";
+import s1 from "../images/L.jpg";
+import s2 from "../images/window.jpg";
+import s3 from "../images/mug.jpg";
 
 function Slider() {
   let sliderArr = [

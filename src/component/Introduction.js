@@ -1,9 +1,9 @@
 import React from "react";
 import { withNamespaces } from "react-i18next";
-import "./Introduction.css";
-import feature1 from "../images/book.jpg";
-import feature2 from "../images/penguin.jpg";
-import feature3 from "../images/train.jpg";
+import "./Introduction.scss";
+import feature1 from "../images/mirror.jpg";
+import feature2 from "../images/equipment.jpg";
+import feature3 from "../images/penguin.jpg";
 
 function Introduction({ t }) {
   return (

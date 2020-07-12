@@ -10,7 +10,7 @@ import {
 } from "../common/helper";
 import classnames from "classnames";
 import * as emailjs from "emailjs-com";
-import "./Contact.css";
+import "./Contact.scss";
 
 const schema = yup.object().shape({
   name: yup.string().label("Name").required(),
