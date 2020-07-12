@@ -1,6 +1,6 @@
 const webpack = require("webpack");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+// const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ErrorOverlayPlugin = require("error-overlay-webpack-plugin");
 
 const htmlPlugin = new HtmlWebPackPlugin({
@@ -9,7 +9,7 @@ const htmlPlugin = new HtmlWebPackPlugin({
 });
 
 const errorOverlayPlugin = new ErrorOverlayPlugin();
-const extractTextPlugin = new ExtractTextPlugin("css/app.css");
+// const miniCssExtractPlugin = new MiniCssExtractPlugin();
 const definePlugin = new webpack.DefinePlugin({
   SERVICE_ID: JSON.stringify("your_service_id"),
   TEMPLATE_ID: JSON.stringify("your_template_id"),
@@ -39,10 +39,14 @@ module.exports = {
       },
       {
         test: /\.s?css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: ["css-loader", "sass-loader"],
-        }),
+        use: [
+          //   {
+          //     loader: MiniCssExtractPlugin.loader,
+          //   },
+          "style-loader",
+          "css-loader",
+          "sass-loader",
+        ],
       },
       // {
       //   test: /\.css$/,
@@ -59,5 +63,5 @@ module.exports = {
       },
     ],
   },
-  plugins: [htmlPlugin, extractTextPlugin, errorOverlayPlugin, definePlugin],
+  plugins: [htmlPlugin, errorOverlayPlugin, definePlugin],
 };
