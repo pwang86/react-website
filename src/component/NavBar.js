@@ -23,7 +23,7 @@ function NavBar({ t }) {
   // set home scroll color
   const [homeColor, setHomeColor] = useState("nav-link text-white");
   const handleHomeActive = () => {
-    setNavStyle("navbar fixed-top navbar-expand-lg navbar-dark");
+    setNavStyle("navbar fixed-top navbar-expand-lg");
     setHomeColor("nav-link text-primary");
   };
   const handleHomeInactive = () => {
@@ -44,7 +44,9 @@ function NavBar({ t }) {
   var navWrapperClass = classNames("customized-nav navbar-collapse collapse ", {
     show: isVisible,
   });
-  var burgerMenuClass = classNames("navbar-toggler", { collapsed: !isClick });
+  var burgerMenuClass = classNames("navbar-toggler", {
+    collapsed: !isClick,
+  });
 
   return (
     <header className={navStyle}>
@@ -59,7 +61,9 @@ function NavBar({ t }) {
           setClick(!isClick);
         }}
       >
-        <span className="navbar-toggler-icon" />
+        <span className="navbar-toggler-icon">
+          <i className="fas fa-bars icon-style" />
+        </span>
       </button>
       <div className={navWrapperClass}>
         <ul className="navbar-nav mr-auto flex-row menu-ul">
