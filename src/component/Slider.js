@@ -4,7 +4,7 @@ import ImgComp from "./ImgComp";
 import Dot from "./Dot";
 import s1 from "../images/L.jpg";
 import s2 from "../images/window.jpg";
-import s3 from "../images/mug.jpg";
+import s3 from "../images/mirror.jpg";
 
 function Slider() {
   let sliderArr = [
@@ -17,7 +17,7 @@ function Slider() {
   useEffect(() => {
     const interval = setInterval(() => {
       goRight();
-    }, 3000);
+    }, 4000);
     return () => clearInterval(interval);
   }, [x]);
   const goLeft = () => {
@@ -35,6 +35,7 @@ function Slider() {
 
   return (
     <div className="home slider">
+      <div className="overlay" />
       {sliderArr.map((item, index) => {
         return (
           <div
