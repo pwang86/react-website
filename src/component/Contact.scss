@@ -60,9 +60,12 @@ textarea{
     height: 3.5em;
     line-height: 3.5em;    
 }
+.modal-backdrop{
+    background-color: rgba(10,10,10, 0.6) !important;
+}
 .modal--display{
     display: block;
-    padding-left: 16px;
+    padding-right: 16px;
 }
 .modal-body--left{
     text-align: left;
