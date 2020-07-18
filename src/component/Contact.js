@@ -87,7 +87,7 @@ function Contact({ t }) {
         {/* Modal */}
         {showModal && (
           <div className="modal-backdrop">
-            <div classnames="modal fade show modal--display" role="dialog">
+            <div className="modal fade show modal--display" role="dialog">
               <div
                 className="modal-dialog modal-dialog-centered"
                 role="document"
