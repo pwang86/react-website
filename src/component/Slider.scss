@@ -10,6 +10,14 @@
     overflow:hidden;
 }
 
+.overlay{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: block;
+    z-index: 5;
+    background-color: rgba(11,15,15,0.6);
+}
 .slide{
     min-width: 100%;
     height: 100%;
@@ -30,6 +38,7 @@
     outline: none;
     transition:0.5s;
     color: #f8f9fa;
+    z-index: 10;
 }
 #goLeft{
     left: 0;
@@ -60,7 +69,7 @@
     display: flex;
     align-items:center;
     justify-content: center;
-    z-index: 1;
+    z-index: 10;
 }
 /*mobile size*/
 @media screen and (max-width: 736px) {
