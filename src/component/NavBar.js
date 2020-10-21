@@ -31,6 +31,11 @@ function NavBar({ t }) {
     setHomeColor("nav-link text-white");
   };
 
+  // set service scroll color
+  const [serviceColor, setServiceColor] = useState("nav-link text-white");
+  const handleServiceActive = () => setServiceColor("nav-link text-primary");
+  const handleServiceInactive = () => setServiceColor("nav-link text-white");
+
   // set introduction scroll color
   const [introColor, setIntroColor] = useState("nav-link text-white");
   const handleIntroActive = () => setIntroColor("nav-link text-primary");
@@ -79,6 +84,20 @@ function NavBar({ t }) {
               onSetInactive={handleHomeInactive}
             >
               {t("home")}
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
+              activeClass="active"
+              to="service"
+              spy
+              smooth
+              duration={500}
+              className={serviceColor}
+              onSetActive={handleServiceActive}
+              onSetInactive={handleServiceInactive}
+            >
+              {t("service")}
             </Link>
           </li>
           <li className="nav-item">
