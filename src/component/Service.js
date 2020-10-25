@@ -6,9 +6,9 @@ function Service({t}) {
   return (
     <div className="service">
       <h1 className="text-center">{t("service")}</h1>
-      <li>Driving Test</li>
-      <li>Refresh</li>
-      <li>Moving to NSW</li>
+      <li>{t("service1")}</li>
+      <li>{t("service2")}</li>
+      <li>{t("service3")}</li>
     </div>
 );
 }
