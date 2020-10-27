@@ -4,11 +4,36 @@ import { withNamespaces } from "react-i18next";
 
 function Service({t}) {
   return (
-    <div className="service">
-      <h1 className="text-center">{t("service")}</h1>
-      <li>{t("service1")}</li>
-      <li>{t("service2")}</li>
-      <li>{t("service3")}</li>
+    <div className="service text-center">
+      <h1>{t("service")}</h1>
+      <div className="container">
+        <div className="row service-row">
+          <div className="col-sm-4">
+            <div className="card box-shadow">
+              <h5 className="card-header">{t("service1")}</h5>
+              <div className="card-body">
+                <p className="card-text">{t("service1-info")}</p>
+              </div>
+            </div>
+          </div>
+          <div className="col-sm-4">
+            <div className="card box-shadow">
+              <h5 className="card-header">{t("service2")}</h5>
+              <div className="card-body">
+                <p className="card-text">{t("service1-info")}</p>
+              </div>
+            </div>
+          </div>
+          <div className="col-sm-4">
+            <div className="card box-shadow">
+              <h5 className="card-header">{t("service3")}</h5>
+              <div className="card-body">
+                <p className="card-text">{t("service1-info")}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 );
 }
@@ -16,3 +41,35 @@ function Service({t}) {
 
 
 export default withNamespaces()(Service);
+/*
+
+      */
+
+      /*
+      <div className="row">
+        <div className="col-sm-4">
+          <div className="card box-shadow">
+            <h5 className="card-header">{t("service1")}</h5>
+            <div className="card-body">
+              <p className="card-text">{t("service1-info")}</p>
+            </div>
+          </div>
+        </div>
+        <div className="col-sm-4">
+          <div className="card box-shadow">
+            <h5 className="card-header">{t("service2")}</h5>
+            <div className="card-body">
+              <p className="card-text">{t("service1-info")}</p>
+            </div>
+          </div>
+        </div>
+        <div className="col-sm-4">
+          <div className="card box-shadow">
+            <h5 className="card-header">{t("service3")}</h5>
+            <div className="card-body">
+              <p className="card-text">{t("service1-info")}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      */
