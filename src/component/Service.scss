@@ -1,4 +1,10 @@
 .service{
-    padding-top: 4em;
+    padding: 4em 0 6em 0;;
     background: #f5f6f7;
+    margin: 0 auto;
+    max-width:100%;
+}
+.service-row{
+    margin-left: 0;
+    position: static !important;
 }
