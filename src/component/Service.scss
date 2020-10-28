@@ -4,7 +4,13 @@
     margin: 0 auto;
     max-width:100%;
 }
+.service-card:hover{
+   box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
+}
 .service-row{
     margin-left: 0;
     position: static !important;
+}
+.card-header--bg{
+    background-color: #007bff !important;
 }
