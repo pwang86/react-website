@@ -5,7 +5,7 @@ import { withNamespaces } from "react-i18next";
 function Service({t}) {
   return (
     <div className="service text-center">
-      <h1>{t("service")}</h1>
+      <h1 className="service-header">{t("service")}</h1>
       <div className="container">
         <div className="row service-row">
           <div className="col-sm-4">
