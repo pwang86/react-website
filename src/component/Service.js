@@ -13,6 +13,12 @@ function Service({t}) {
               <h5 className="card-header card-header--bg text-white">{t("service1")}</h5>
               <div className="card-body">
                 <p className="card-text">{t("service1-info")}</p>
+                <p>
+                  <ul>
+                    <li>Bankstown</li>
+                    <li>Silverwater</li>
+                  </ul>
+                </p>
               </div>
             </div>
           </div>
@@ -20,7 +26,7 @@ function Service({t}) {
             <div className="card service-card">
               <h5 className="card-header card-header--bg text-white">{t("service2")}</h5>
               <div className="card-body">
-                <p className="card-text">{t("service1-info")}</p>
+                <p className="card-text">{t("service2-info")}</p>
               </div>
             </div>
           </div>
