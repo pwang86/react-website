@@ -1,5 +1,5 @@
 .service{
-    padding: 4em 0 6em 0;;
+    padding: 4em 2em 6em 2em;
     background: #f5f6f7;
     margin: 0 auto;
     max-width:100%;
@@ -7,16 +7,20 @@
 .service-header{
     margin-bottom: 1.2em;
 }
-.service-card:hover{
-   box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
+.card-body-custom {
+    padding: 0 0 1.25rem 0;
 }
-.service-row{
-    margin-left: 0;
-    position: static !important;
-}
-.card-header--bg{
+.card-title-custom {
+    padding: 1rem;
     background-color: #007bff !important;
+}
+.card:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0.5em 2em 0 rgba(54,68,75,.18);
 }
 p{
     font-size: 1rem;
+}
+.card-text-custom {
+    padding: 1rem;
 }
