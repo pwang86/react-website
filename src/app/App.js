@@ -5,7 +5,7 @@ import Contact from "../component/Contact";
 import Service from "../component/Service";
 import Introduction from "../component/Introduction";
 import Footer from "../component/Footer";
-import Slider from "../component/Slider";
+import Slider from "../component/Slider2";
 
 function App() {
   return (
