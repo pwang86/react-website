@@ -10,6 +10,12 @@ function Slider2() {
 
   const [slideIndex, setSlideIndex] = useState(0);
 
+  const[state, setState] = useState({
+    translate: 0,
+    transition: 0.45
+  });
+  const {translate, transition} = state;
+
   let sliderArr = [
     <ImgComp src={s1} />,
     <ImgComp src={s2} />,
