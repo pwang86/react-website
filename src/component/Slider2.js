@@ -36,9 +36,9 @@ function Slider2() {
   return (
     <div className="home slider">
       <div className="overlay" />
-      <div className="slide" style={{ display: slideIndex === 0 ? 'block': 'none' }}>{sliderArr[0]}</div>
-      <div className="slide" style={{ display: slideIndex === 1 ? 'block': 'none' }}>{sliderArr[1]}</div>
-      <div className="slide" style={{ display: slideIndex === 2 ? 'block': 'none' }}>{sliderArr[2]}</div>
+      <div className="slide-item" style={{ display: slideIndex === 0 ? 'block': 'none' }}>{sliderArr[0]}</div>
+      <div className="slide-item" style={{ display: slideIndex === 1 ? 'block': 'none' }}>{sliderArr[1]}</div>
+      <div className="slide-item" style={{ display: slideIndex === 2 ? 'block': 'none' }}>{sliderArr[2]}</div>
 
       <div className="row">
         {dotArr.map((item, index) => {
