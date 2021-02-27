@@ -1,38 +1,52 @@
-import React from "react";
-import "./Slider.scss";
+import React, { useState, useEffect } from "react";
+import "./Slider2.scss";
+import ImgComp from "./ImgComp";
+import Dot from "./Dot";
 import s1 from "../images/L.jpg";
 import s2 from "../images/window.jpg";
 import s3 from "../images/mirror.jpg";
 
-function Slider() {
+function Slider1() {
+
+  const [slideIndex, setSlideIndex] = useState(0);
+
+  let sliderArr = [
+    <ImgComp src={s1} />,
+    <ImgComp src={s2} />,
+    <ImgComp src={s3} />,
+  ];
+
+  let dotArr = [
+    <Dot dotId="0" slideId={`${slideIndex}`} />,
+    <Dot dotId="1" slideId={`${slideIndex}`} />,
+    <Dot dotId="2" slideId={`${slideIndex}`} />,
+  ];
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      showSlides();
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [slideIndex]);
+
+  const showSlides = () => {
+    slideIndex === (sliderArr.length - 1) ? setSlideIndex(0): setSlideIndex(slideIndex + 1);
+  };
+
   return (
-    <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
+    <div className="home slider">
       <div className="overlay" />
-      <div className="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1" />
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2" />
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3" />
+      <div className="slide-item" style={{ display: slideIndex === 0 ? 'block': 'none' }}>{sliderArr[0]}</div>
+      <div className="slide-item" style={{ display: slideIndex === 1 ? 'block': 'none' }}>{sliderArr[1]}</div>
+      <div className="slide-item" style={{ display: slideIndex === 2 ? 'block': 'none' }}>{sliderArr[2]}</div>
+
+      <div className="row">
+        {dotArr.map((item, index) => {
+          return <div key={index}>{item}</div>;
+        })}
       </div>
-      <div className="carousel-inner">
-        <div className="carousel-item active">
-          <img src={s1} className="d-block w-100 slider" alt="..." />
-        </div>
-        <div className="carousel-item">
-          <img src={s2} className="d-block w-100 slider" alt="..." />
-        </div>
-        <div className="carousel-item">
-          <img src={s3} className="d-block w-100 slider" alt="..." />
-        </div>
-      </div>
-      <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"  data-bs-slide="prev">
-        <span className="carousel-control-prev-icon" aria-hidden="true" />
-        <span className="visually-hidden">Previous</span>
-      </button>
-      <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"  data-bs-slide="next">
-        <span className="carousel-control-next-icon" aria-hidden="true" />
-        <span className="visually-hidden">Next</span>
-      </button>
     </div>
   );
 }
-export default Slider;
+
+export default Slider1;
