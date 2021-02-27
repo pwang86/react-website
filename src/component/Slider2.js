@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Slider2.scss";
 import ImgComp from "./ImgComp";
+import SliderContent from "./SliderContent";
 import Dot from "./Dot";
 import s1 from "../images/L.jpg";
 import s2 from "../images/window.jpg";
@@ -11,12 +12,13 @@ function Slider2() {
   const [slideIndex, setSlideIndex] = useState(0);
 
   const[state, setState] = useState({
+    activeIndex: 0,
     translate: 0,
     transition: 0.45
   });
-  const {translate, transition} = state;
+  const {activeIndex, translate, transition} = state;
 
-  let sliderArr = [
+  const sliderArr = [
     <ImgComp src={s1} />,
     <ImgComp src={s2} />,
     <ImgComp src={s3} />,
@@ -42,9 +44,12 @@ function Slider2() {
   return (
     <div className="home slider">
       <div className="overlay" />
-      <div className="slide-item" style={{ display: slideIndex === 0 ? 'block': 'none' }}>{sliderArr[0]}</div>
-      <div className="slide-item" style={{ display: slideIndex === 1 ? 'block': 'none' }}>{sliderArr[1]}</div>
-      <div className="slide-item" style={{ display: slideIndex === 2 ? 'block': 'none' }}>{sliderArr[2]}</div>
+      <SliderContent translate={translate} transition={transition}>
+        <div className="slide-item" style={{ display: slideIndex === 0 ? 'block': 'none' }}>{sliderArr[0]}</div>
+        <div className="slide-item" style={{ display: slideIndex === 1 ? 'block': 'none' }}>{sliderArr[1]}</div>
+        <div className="slide-item" style={{ display: slideIndex === 2 ? 'block': 'none' }}>{sliderArr[2]}</div>
+      </SliderContent>
+      
 
       <div className="row">
         {dotArr.map((item, index) => {
