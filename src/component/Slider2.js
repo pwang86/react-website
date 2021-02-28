@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./Slider2.scss";
-import ImgComp from "./ImgComp";
+import SlideImg from "./SlideImg";
 import SliderContent from "./SliderContent";
 import Dot from "./Dot";
-import s1 from "../images/L.jpg";
-import s2 from "../images/window.jpg";
-import s3 from "../images/mirror.jpg";
 
 function Slider2() {
 
-  const [slideIndex, setSlideIndex] = useState(0);
+  const getWidth = () => window.innerWidth;
 
   const[state, setState] = useState({
     activeIndex: 0,
@@ -18,12 +15,46 @@ function Slider2() {
   });
   const {activeIndex, translate, transition} = state;
 
-  const sliderArr = [
-    <ImgComp src={s1} />,
-    <ImgComp src={s2} />,
-    <ImgComp src={s3} />,
+  const imgs = [
+    '../images/L.jpg',
+    '../images/window.jpg',
+    '../images/mirror.jpg'
   ];
 
+  let goRight = () => {
+    if (activeIndex === imgs.length - 1) {
+      return setState({
+        ...state,
+        translate: 0,
+        activeIndex: 0
+      });
+    }
+
+    setState({
+      ...state,
+      activeIndex: activeIndex + 1,
+      translate: (activeIndex + 1) * getWidth()
+    });
+  }
+
+  let goLeft = () => {
+    if (activeIndex === 0) {
+      return setState({
+        ...state,
+        translate: (imgs.length - 1) * getWidth(),
+        activeIndex: imgs.length - 1
+      });
+    }
+
+    setState({
+      ...state,
+      activeIndex: activeIndex - 1,
+      translate: (activeIndex - 1) * getWidth()
+    });
+  }
+
+
+/*
   let dotArr = [
     <Dot dotId="0" slideId={`${slideIndex}`} />,
     <Dot dotId="1" slideId={`${slideIndex}`} />,
@@ -40,14 +71,16 @@ function Slider2() {
   const showSlides = () => {
     slideIndex === (sliderArr.length - 1) ? setSlideIndex(0): setSlideIndex(slideIndex + 1);
   };
-
+*/
   return (
     <div className="home slider">
       <div className="overlay" />
-      <SliderContent translate={translate} transition={transition}>
-        <div className="slide-item" style={{ display: slideIndex === 0 ? 'block': 'none' }}>{sliderArr[0]}</div>
-        <div className="slide-item" style={{ display: slideIndex === 1 ? 'block': 'none' }}>{sliderArr[1]}</div>
-        <div className="slide-item" style={{ display: slideIndex === 2 ? 'block': 'none' }}>{sliderArr[2]}</div>
+      <SliderContent translate={translate} transition={transition} width={getWidth * imgs.length}>
+        {imgs.map((item, index) => {
+          return (
+            <SlideImg key={index} src={item} />
+          );
+        })}
       </SliderContent>
       
 
