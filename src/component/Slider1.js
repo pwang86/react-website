@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./Slider2.scss";
+import "./Slider1.scss";
 import ImgComp from "./ImgComp";
 import Dot from "./Dot";
 import s1 from "../images/L.jpg";
