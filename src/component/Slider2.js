@@ -75,7 +75,7 @@ function Slider2() {
   return (
     <div className="home slider">
       <div className="overlay" />
-      <SliderContent translate={translate} transition={transition} width={getWidth * imgs.length}>
+      <SliderContent translate={translate} transition={transition} width={getWidth() * imgs.length}>
         {imgs.map((item, index) => {
           return (
             <SlideImg key={index} src={item} />
@@ -83,6 +83,12 @@ function Slider2() {
         })}
       </SliderContent>
       
+      <button id="goLeft" onClick={goLeft}>
+        <i className="fas fa-chevron-left" />
+      </button>
+      <button id="goRight" onClick={goRight}>
+        <i className="fas fa-chevron-right" />
+      </button>
 
       <div className="row">
         {dotArr.map((item, index) => {
