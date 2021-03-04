@@ -3,13 +3,17 @@ import './Dots.scss';
 
 function Dot({active}) {
   return (
-    <span className="dot" style={{background:active ? 'black' : 'white'} } />
+    <span className="dot" style={{background:active ? 'black' : 'white'}} />
   );
 }
 
-function Dots({activeIndex}) {
+function Dots({slides, activeIndex}) {
   return(
-
+    <div className="dots">
+      {slides.map((slide, i) => (
+        <Dot key={slide} active={activeIndex === i} />
+      ))}
+    </div>
   );
 }
 
