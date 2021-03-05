@@ -5,13 +5,18 @@ import Contact from "../component/Contact";
 import Service from "../component/Service";
 import Introduction from "../component/Introduction";
 import Footer from "../component/Footer";
-import Slider from "../component/Slider";
+import Slider from "../component/Slider2";
 
 function App() {
+  const imgs = [
+    '../images/L.jpg',
+    '../images/window.jpg',
+    '../images/mirror.jpg'
+  ];
   return (
     <div>
       <NavBar />
-      <Slider />
+      <Slider slides={imgs} />
       <Service />
       <Introduction />
       <Contact />
