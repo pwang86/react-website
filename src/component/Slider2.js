@@ -71,14 +71,14 @@ function Slider2(props) {
       <div className="overlay" />
       <SliderContent translate={translate} transition={transition} width={getWidth() * props.slides.length}>
         {props.slides.map((slide, index) => (
-          <SlideImg key={index} content={slide} />
+          <SlideImg key={index + index} content={slide} />
         ))}
       </SliderContent>
       
-      <button id="goLeft" onClick={goLeft}>
+      <button id="goLeft" handleClick={goLeft}>
         <i className="fas fa-chevron-left" />
       </button>
-      <button id="goRight" onClick={goRight}>
+      <button id="goRight" handleClick={goRight}>
         <i className="fas fa-chevron-right" />
       </button>
 
