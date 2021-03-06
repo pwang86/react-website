@@ -1,28 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import "./Slider2.scss";
 import SlideImg from "./SlideImg";
 import SliderContent from "./SliderContent";
-import Dot from "./Dot";
+import Dots from "./Dots";
 
-function Slider2() {
+function Slider2(props) {
 
   const getWidth = () => window.innerWidth;
 
   const[state, setState] = useState({
-    activeIndex: 0,
     translate: 0,
-    transition: 0.45
+    transition: 0.45,
+    activeIndex: 0
   });
-  const {activeIndex, translate, transition} = state;
-
-  const imgs = [
-    '../images/L.jpg',
-    '../images/window.jpg',
-    '../images/mirror.jpg'
-  ];
+  const {translate, transition, activeIndex} = state;
 
   let goRight = () => {
-    if (activeIndex === imgs.length - 1) {
+    if (activeIndex === props.slides.length - 1) {
       return setState({
         ...state,
         translate: 0,
@@ -41,8 +35,8 @@ function Slider2() {
     if (activeIndex === 0) {
       return setState({
         ...state,
-        translate: (imgs.length - 1) * getWidth(),
-        activeIndex: imgs.length - 1
+        translate: (props.slides.length - 1) * getWidth(),
+        activeIndex: props.slides.length - 1
       });
     }
 
@@ -75,12 +69,10 @@ function Slider2() {
   return (
     <div className="home slider">
       <div className="overlay" />
-      <SliderContent translate={translate} transition={transition} width={getWidth() * imgs.length}>
-        {imgs.map((item, index) => {
-          return (
-            <SlideImg key={index} src={item} />
-          );
-        })}
+      <SliderContent translate={translate} transition={transition} width={getWidth() * props.slides.length}>
+        {props.slides.map((slide, index) => (
+          <SlideImg key={index} content={slide} />
+        ))}
       </SliderContent>
       
       <button id="goLeft" onClick={goLeft}>
@@ -90,11 +82,7 @@ function Slider2() {
         <i className="fas fa-chevron-right" />
       </button>
 
-      <div className="row">
-        {dotArr.map((item, index) => {
-          return <div key={index}>{item}</div>;
-        })}
-      </div>
+      <Dots slides={props.slides} activeIndex={activeIndex} />
     </div>
   );
 }
