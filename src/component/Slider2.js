@@ -1,6 +1,6 @@
 import React, { useState} from "react";
 import "./Slider2.scss";
-import SlideImg from "./SlideImg";
+import ImgComp from "./ImgComp";
 import SliderContent from "./SliderContent";
 import Dots from "./Dots";
 
@@ -70,9 +70,11 @@ function Slider2(props) {
     <div className="home slider">
       <div className="overlay" />
       <SliderContent translate={translate} transition={transition} width={getWidth() * props.slides.length}>
-        {props.slides.map((slide, index) => (
-          <SlideImg key={index + index} content={slide} />
-        ))}
+        {props.slides.map((slide, index) => {
+          return (
+            <ImgComp key={index + index} src={slide} />
+          );
+        })}
       </SliderContent>
       
       <button id="goLeft" handleClick={goLeft}>
