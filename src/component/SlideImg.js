@@ -1,9 +1,9 @@
 import React from "react";
 import "./SlideImg.scss";
 
-function SlideImg({content}) {
+function SlideImg(props) {
   return (
-    <div style={{backgroundImage:`url(${content})`}} className="imgStyles" />
+    <div style={{backgroundImage:`url(${props.content})`}} className="imgStyles" />
   );
 }
 
