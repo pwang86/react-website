@@ -1,10 +1,15 @@
 import React, { useState} from "react";
 import "./Slider2.scss";
-import ImgComp from "./ImgComp";
+import SlideImg from "./SlideImg";
 import SliderContent from "./SliderContent";
 import Dots from "./Dots";
+import s1 from "../images/L.jpg";
+import s2 from "../images/window.jpg";
+import s3 from "../images/mirror.jpg";
 
-function Slider2(props) {
+function Slider2() {
+
+  const imgsArr = [s1,s2, s3];
 
   const getWidth = () => window.innerWidth;
 
@@ -16,7 +21,7 @@ function Slider2(props) {
   const {translate, transition, activeIndex} = state;
 
   let goRight = () => {
-    if (activeIndex === props.slides.length - 1) {
+    if (activeIndex === imgsArr.length - 1) {
       return setState({
         ...state,
         translate: 0,
@@ -35,8 +40,8 @@ function Slider2(props) {
     if (activeIndex === 0) {
       return setState({
         ...state,
-        translate: (props.slides.length - 1) * getWidth(),
-        activeIndex: props.slides.length - 1
+        translate: (imgsArr.length - 1) * getWidth(),
+        activeIndex: imgsArr.length - 1
       });
     }
 
@@ -69,22 +74,20 @@ function Slider2(props) {
   return (
     <div className="home slider">
       <div className="overlay" />
-      <SliderContent translate={translate} transition={transition} width={getWidth() * props.slides.length}>
-        {props.slides.map((slide, index) => {
-          return (
-            <ImgComp key={index + index} src={slide} />
-          );
+      <SliderContent translate={translate} transition={transition} width={getWidth() * imgsArr.length}>
+        {imgsArr.map((img, index) => {
+          return (<SlideImg key={index} content={img} />);
         })}
       </SliderContent>
       
-      <button id="goLeft" handleClick={goLeft}>
+      <button id="goLeft" onClick={goLeft}>
         <i className="fas fa-chevron-left" />
       </button>
-      <button id="goRight" handleClick={goRight}>
+      <button id="goRight" onClick={goRight}>
         <i className="fas fa-chevron-right" />
       </button>
 
-      <Dots slides={props.slides} activeIndex={activeIndex} />
+      <Dots slides={imgsArr} activeIndex={activeIndex} />
     </div>
   );
 }
