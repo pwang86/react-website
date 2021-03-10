@@ -3,15 +3,12 @@ import "./Slider2.scss";
 import SlideImg from "./SlideImg";
 import SliderContent from "./SliderContent";
 import Dots from "./Dots";
-import s1 from "../images/L.jpg";
-import s2 from "../images/window.jpg";
-import s3 from "../images/mirror.jpg";
 
 const getWidth = () => window.innerWidth;
 
-function Slider2() {
+const Slider2 = props => {
 
-  const imgsArr = [s1,s2,s3];
+  const imgsArr = props.slides;
   const firstSlide = imgsArr[0];
   const secondSlide = imgsArr[1];
   const thirdSlide = imgsArr[2]; 
@@ -41,24 +38,21 @@ function Slider2() {
       autoPlayRef.current();
     }
 
-    const smooth = (e) => {
-      if (e.target.className.includes('SliderContent')) {
-        transitionRef.current();
-      }
+    const smooth = () => {
+      transitionRef.current();
     }
 
     const resize = () => {
       resizeRef.current();
     }
 
-    const interval = setInterval(play, 3000);
     const transitionEnd = window.addEventListener('transitioned', smooth);
     const onResize = window.addEventListener('resize', resize);
-
+    const interval = setInterval(play, 3000);
     return () => {
-      clearInterval(interval);
       window.removeEventListener('transitioned', transitionEnd);
       window.removeEventListener('resize', onResize);
+      clearInterval(interval);
     }
   }, []);
 
@@ -73,18 +67,18 @@ function Slider2() {
   }
 
   const smoothTransition = () => {
-    let slides = [];
+    let _slides = [];
     
     if (activeIndex === imgsArr.length - 1)
-      slides = [secondSlide, thirdSlide, firstSlide];
+      _slides = [secondSlide, thirdSlide, firstSlide];
     else if (activeIndex === 0) 
-      slides = [thirdSlide, firstSlide, secondSlide];
+      _slides = [thirdSlide, firstSlide, secondSlide];
     else
-      slides = imgsArr.slice(activeIndex - 1, activeIndex + 2);
+      _slides = imgsArr.slice(activeIndex - 1, activeIndex + 2);
 
     setState({
       ...state,
-      slides,
+      _slides,
       transition:0,
       translate: getWidth()
     });
