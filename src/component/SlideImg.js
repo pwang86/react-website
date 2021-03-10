@@ -1,10 +1,10 @@
-import React from "react";
+import React, {memo} from "react";
 import "./SlideImg.scss";
 
 function SlideImg(props) {
   return (
-    <div style={{backgroundImage:`url(${props.content})`}} className="imgStyles" />
+    <div style={{backgroundImage:`url(${props.content})`, width:`${props.width}px`}} className="imgStyles" />
   );
 }
 
-export default SlideImg;
+export default memo(SlideImg);
