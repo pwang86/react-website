@@ -3,12 +3,15 @@ import "./Slider2.scss";
 import SlideImg from "./SlideImg";
 import SliderContent from "./SliderContent";
 import Dots from "./Dots";
+import s1 from "../images/L.jpg";
+import s2 from "../images/window.jpg";
+import s3 from "../images/mirror.jpg";
 
 const getWidth = () => window.innerWidth;
 
-const Slider2 = props => {
+const Slider2 = () => {
 
-  const imgsArr = props.slides;
+  const imgsArr = [s1, s2, s3];;
   const firstSlide = imgsArr[0];
   const secondSlide = imgsArr[1];
   const thirdSlide = imgsArr[2]; 
@@ -23,7 +26,6 @@ const Slider2 = props => {
   const autoPlayRef = useRef();
   const transitionRef = useRef();
   const resizeRef = useRef();
-  // const sliderRef = useRef();
 
   useEffect(() => {
     autoPlayRef.current = goRight;
@@ -32,8 +34,6 @@ const Slider2 = props => {
   });
 
   useEffect(() => {
-    // const slider = sliderRef.current;
-
     const play = () => {
       autoPlayRef.current();
     }
