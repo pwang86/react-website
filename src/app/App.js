@@ -6,13 +6,17 @@ import Service from "../component/Service";
 import Introduction from "../component/Introduction";
 import Footer from "../component/Footer";
 import Slider from "../component/Slider2";
+import s1 from "../images/L.jpg";
+import s2 from "../images/window.jpg";
+import s3 from "../images/mirror.jpg";
 
 function App() {
 
+  const imgs = [s1, s2, s3];
   return (
     <div>
       <NavBar />
-      <Slider />
+      <Slider slides={imgs} />
       <Service />
       <Introduction />
       <Contact />
