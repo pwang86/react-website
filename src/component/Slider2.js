@@ -46,11 +46,11 @@ const Slider2 = props => {
       resizeRef.current();
     }
 
-    const transitionEnd = window.addEventListener('transitioned', smooth);
+    const transitionEnd = window.addEventListener('transitionend', smooth);
     const onResize = window.addEventListener('resize', resize);
     const interval = setInterval(play, 3000);
     return () => {
-      window.removeEventListener('transitioned', transitionEnd);
+      window.removeEventListener('transitionend', transitionEnd);
       window.removeEventListener('resize', onResize);
       clearInterval(interval);
     }
