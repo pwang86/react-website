@@ -1,10 +1,8 @@
-.slider{
+.slide-custom{
     position: relative;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
-    margin: 0 auto;
     overflow:hidden;
-    white-space: nowrap;
 }
 
 .overlay{
@@ -12,8 +10,15 @@
     width: 100%;
     height: 100vh;
     display: block;
-    z-index: 2;
+    z-index: 1;
     background-color: rgba(11,15,15,0.6);
+}
+/*
+.slide{
+    min-width: 100%;
+    height: 100%;
+    transition: 0.5s;
+    overflow: hidden;
 }
 
 %btn-style{
@@ -52,3 +57,20 @@
 #goRight:hover{
     @extend %btn-hover-style;
 }
+
+.row{
+    position: absolute;
+    bottom: 25px;
+    width: 100%;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    z-index: 10;
+}
+
+@media screen and (max-width: 736px) {
+    .slide{
+        height: 100vh;
+    }
+}
+*/
