@@ -6,7 +6,7 @@ import s3 from "../images/mirror.jpg";
 
 function Slider() {
   return (
-    <div id="carouselIndicators" className="carousel slide slide-custom" data-ride="carousel">
+    <div id="carouselIndicators" className="home carousel slide slide-custom" data-ride="carousel">
       <div className="overlay" />
       <ol className="carousel-indicators">
         <li data-target="#carouselIndicators" data-slide-to="0" className="active" />
