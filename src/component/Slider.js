@@ -5,6 +5,9 @@ import s2 from "../images/window.jpg";
 import s3 from "../images/mirror.jpg";
 
 function Slider() {
+  /* from bootstrap template
+  <img src={s1} className="d-block w-100" alt="..." />
+  */
   return (
     <div id="carouselIndicators" className="home carousel slide slide-custom" data-ride="carousel">
       <div className="overlay" />
@@ -15,13 +18,13 @@ function Slider() {
       </ol>
       <div className="carousel-inner">
         <div className="carousel-item active">
-          <img src={s1} className="d-block w-100" alt="..." />
+          <div style={{backgroundImage:`url(${s1})`}} className="imgStyle d-block w-100" />
         </div>
         <div className="carousel-item">
-          <img src={s2} className="d-block w-100" alt="..." />
+          <div style={{backgroundImage:`url(${s2})`}} className="imgStyle d-block w-100" />
         </div>
         <div className="carousel-item">
-          <img src={s3} className="d-block w-100" alt="..." />
+          <div style={{backgroundImage:`url(${s3})`}} className="imgStyle d-block w-100" />
         </div>
       </div>
       <a className="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
