@@ -141,7 +141,7 @@ function NavBar({ t }) {
                 src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/flags/1x1/cn.svg"
                 alt="Chinese"
               />
-              中文
+              中
             </a>
           </li>
           <li className="nav-item">
@@ -155,7 +155,7 @@ function NavBar({ t }) {
                 src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/flags/1x1/au.svg"
                 alt="English"
               />
-              English
+              ENG
             </a>
           </li>
         </ul>
