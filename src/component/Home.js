@@ -1,6 +1,6 @@
 import React from "react";
 import "./Home.scss";
-import BgImg from "../images/test.jpg";
+import BgImg from "../images/mirror.jpg";
 import { withNamespaces } from "react-i18next";
 
 const homeImg = {
