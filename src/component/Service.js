@@ -10,7 +10,7 @@ function Service({t}) {
         <div className="card">
           <div className="card-body card-body-custom">
             <h5 className="card-title card-title-custom text-white">{t("service1")}</h5>
-            <p className="card-text card-text-custom">{t("service1-info")} Bankstown and Silverwater.</p>
+            <p className="card-text card-text-custom">{t("service1-info")}</p>
           </div>
         </div>
         <div className="card">
